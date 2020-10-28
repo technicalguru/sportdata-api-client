@@ -20,7 +20,6 @@ import org.ehcache.PersistentCacheManager;
 import org.ehcache.config.builders.CacheConfigurationBuilder;
 import org.ehcache.config.builders.CacheManagerBuilder;
 import org.ehcache.config.builders.ResourcePoolsBuilder;
-import org.ehcache.config.units.EntryUnit;
 import org.ehcache.config.units.MemoryUnit;
 
 
@@ -47,7 +46,7 @@ public class ClientFilter implements ClientRequestFilter, ClientResponseFilter {
 			    .withCache("cookies",
 			        CacheConfigurationBuilder.newCacheConfigurationBuilder(String.class, NewCookie.class,
 			            ResourcePoolsBuilder.newResourcePoolsBuilder()
-			                .heap(10, EntryUnit.ENTRIES) 
+			                //.heap(10, EntryUnit.ENTRIES) 
 			                .disk(20, MemoryUnit.MB, true) 
 			            )
 			        .withValueSerializer(new NewCookieSerializer())

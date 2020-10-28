@@ -19,7 +19,6 @@ public class ClientProvider extends RunListener {
 	@Override
 	public void testRunStarted(Description description) throws Exception {
 		super.testRunStarted(description);
-		System.out.println("Setting suite up");
 		String apiKey = null;
 		// Load from file
 		try {
@@ -45,7 +44,6 @@ public class ClientProvider extends RunListener {
 	public void testRunFinished(Result result) throws Exception {
 		if (client != null) {
 			client.close();
-			System.out.println("Shutting suite down");
 		}
 		super.testRunFinished(result);
 	}
