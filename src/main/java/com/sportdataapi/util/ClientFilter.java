@@ -72,10 +72,8 @@ public class ClientFilter implements ClientRequestFilter, ClientResponseFilter {
 			String name = entry.getKey();
 			NewCookie cookie = entry.getValue();
 			if (cookie.getExpiry().before(now)) {
-				System.out.println("Cookie expired");
 				cookies.remove(name);
 			} else {
-				System.out.println("Setting cookie");
 				requestContext.getHeaders().add("Cookie", cookie.getName()+'='+cookie.getValue());
 			}
 		}
