@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sportdataapi.data;
+package com.sportdataapi.util;
 
 /**
  * @author ralph

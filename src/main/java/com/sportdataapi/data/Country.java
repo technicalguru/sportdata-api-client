@@ -2,6 +2,7 @@ package com.sportdataapi.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.sportdataapi.util.ContinentDeserializer;
 
 /**
  * Country object for Sportdataapi.com.

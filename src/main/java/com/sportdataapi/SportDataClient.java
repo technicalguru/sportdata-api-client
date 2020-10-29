@@ -51,6 +51,6 @@ public class SportDataClient {
 	 * Close the client.
 	 */
 	public void close() {
-		if (filter != null) filter.close();
+		client.close();
 	}
 }

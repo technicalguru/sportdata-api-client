@@ -9,7 +9,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 
 import com.sportdataapi.data.Country;
-import com.sportdataapi.data.Response;
+import com.sportdataapi.util.Response;
 
 /**
  * The countries getter.

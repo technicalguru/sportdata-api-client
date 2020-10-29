@@ -1,4 +1,4 @@
-package com.sportdataapi.data;
+package com.sportdataapi.util;
 
 import java.io.IOException;
 
@@ -7,6 +7,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.sportdataapi.data.Continent;
 
 /**
  * Helps Jackson to deserialize a continent.

@@ -1,4 +1,4 @@
-package com.sportdataapi.data;
+package com.sportdataapi.util;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 

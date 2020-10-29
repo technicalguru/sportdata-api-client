@@ -1,4 +1,4 @@
-package com.sportdataapi.data;
+package com.sportdataapi.util;
 
 import java.util.List;
 import java.util.Map;
