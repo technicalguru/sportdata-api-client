@@ -4,8 +4,10 @@
 package com.sportdataapi;
 
 import javax.ws.rs.client.Client;
-import javax.ws.rs.client.WebTarget;
 
+import com.sportdataapi.client.SoccerClient;
+import com.sportdataapi.client.StatusClient;
+import com.sportdataapi.util.AbstractClient;
 import com.sportdataapi.util.ClientFilter;
 
 /**
@@ -13,22 +15,21 @@ import com.sportdataapi.util.ClientFilter;
  * @author ralph
  *
  */
-public class SportDataClient {
+public class SportDataClient extends AbstractClient {
 
-	private Client       client;
-	private ClientFilter filter;
-	private WebTarget    rootTarget;
+	private Client          client;
+	private ClientFilter    filter;
 	
 	/**
 	 * Constructor.
-	 * @param restClient - The Jersey client to be used
+	 * @param restClient - The Jersey HTTP client to be used
 	 * @param apiKey     - The sportdataapi.com API key
 	 */
 	protected SportDataClient(Client restClient, String apiKey) {
+		super(restClient.target("https://app.sportdataapi.com/api/v1"));
 		client      = restClient;
 		filter      = new ClientFilter(apiKey);
-		client.register(filter);
-		rootTarget  = client.target("https://app.sportdataapi.com/api/v1");
+		getTarget().register(filter);
 	}
 
 	/**
@@ -36,7 +37,7 @@ public class SportDataClient {
 	 * @return the soccer client.
 	 */
 	public SoccerClient soccer() {
-		return new SoccerClient(rootTarget);
+		return get(SoccerClient.class);
 	}
 
 	/**
@@ -44,7 +45,7 @@ public class SportDataClient {
 	 * @return the status client
 	 */
 	public StatusClient status() {
-		return new StatusClient(rootTarget);
+		return get(StatusClient.class);
 	}
 	
 	/**

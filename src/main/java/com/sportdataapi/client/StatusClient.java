@@ -1,14 +1,17 @@
 /**
  * 
  */
-package com.sportdataapi;
+package com.sportdataapi.client;
 
 import javax.ws.rs.client.WebTarget;
 
+import com.sportdataapi.SportDataClient;
 import com.sportdataapi.data.Status;
+import com.sportdataapi.util.AbstractClient;
 
 /**
- * The Status getter.
+ * The Status client.
+ * <p><b>Attention!</b> You shall never create this client directly but use {@link SportDataClient#status()} instead.</p>
  * @author ralph
  *
  */
@@ -18,7 +21,7 @@ public class StatusClient extends AbstractClient {
 	 * Constructor.
 	 * @param target - the target to request
 	 */
-	protected StatusClient(WebTarget target) {
+	public StatusClient(WebTarget target) {
 		super(target.path("status"));
 	}
 

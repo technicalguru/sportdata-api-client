@@ -6,7 +6,7 @@ import rs.baselib.util.RsDate;
 import rs.baselib.util.RsDay;
 
 /**
- * Country object for Sportdataapi.com.
+ * Season object for Sportdataapi.com.
  * @author ralph
  *
  */

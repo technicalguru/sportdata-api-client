@@ -20,8 +20,8 @@ public class ClientProvider extends RunListener {
 	public void testRunStarted(Description description) throws Exception {
 		super.testRunStarted(description);
 		String apiKey = null;
-		// Load from file
 		try {
+			// Load from file
 			apiKey = FileFinder.load(ClientProvider.class, "my-apikey.txt").trim();
 		} catch (NullPointerException e) {
 			// Ignore

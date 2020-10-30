@@ -90,4 +90,14 @@ public class Country {
 	public void setContinent(Continent continent) {
 		this.continent = continent;
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		return "Country [id=" + id + ", name=" + name + ", countryCode=" + countryCode + ", continent=" + continent + "]";
+	}
+	
+	
 }

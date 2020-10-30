@@ -3,7 +3,7 @@ package com.sportdataapi.data;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Country object for Sportdataapi.com.
+ * League object for Sportdataapi.com.
  * @author ralph
  *
  */

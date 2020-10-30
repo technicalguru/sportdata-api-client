@@ -44,6 +44,9 @@ public class ClientFilter implements ClientRequestFilter, ClientResponseFilter {
 	 * @param apiKey - the API key.
 	 */
 	public ClientFilter(String apiKey) {
+		if (apiKey == null) {
+			throw new RuntimeException("No API key provided");
+		}
 		this.apiKey = apiKey;
 		cookies = readCookies();
 	}
@@ -62,7 +65,7 @@ public class ClientFilter implements ClientRequestFilter, ClientResponseFilter {
 	}
 
 	/**
-	 * Set the API key and cookies if required.
+	 * Set the API key and cookies if required in the request.
 	 */
 	@Override
 	public void filter(ClientRequestContext requestContext) throws IOException {

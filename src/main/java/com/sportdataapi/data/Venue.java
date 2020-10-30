@@ -1,7 +1,7 @@
 package com.sportdataapi.data;
 
 /**
- * Country object for Sportdataapi.com.
+ * Venue object for Sportdataapi.com.
  * @author ralph
  *
  */
