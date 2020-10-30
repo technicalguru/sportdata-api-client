@@ -26,15 +26,27 @@ public class TeamsClient extends AbstractClient {
 	 */
 	public TeamsClient(WebTarget target) {
 		super(target.path("teams"));
-		throw new RuntimeException("This API endpoint is not yet implemented.");
 	}
 
 	/**
-	 * Request and return the list of teams.
-	 * @return list of teams
+	 * Request and return the list of teams for a country.
+	 * @param countryId - the ID of the country to query
+	 * @return list of teams for the country
 	 */
-	public List<Team> list() {
-		Response<List<Team>> response = getRequest().get(new GenericType<Response<List<Team>>>() {});
+	public List<Team> list(int countryId) {
+		if (countryId <= 0) throw new RuntimeException("countryId must be a positive number");
+		Response<List<Team>> response = getTarget().queryParam("country_id", ""+countryId).request().get(new GenericType<Response<List<Team>>>() {});
 		return response.getData();
 	}
+	
+	/**
+	 * Request and returns a specific team.
+	 * @param id - id of team
+	 * @return the team requested or {@code null}
+	 */
+	public Team get(int id) {
+		Response<Team> response = getTarget().path(""+id).request().get(new GenericType<Response<Team>>() {});
+		return response.getData();
+	}
+
 }

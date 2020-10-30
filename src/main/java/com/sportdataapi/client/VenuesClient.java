@@ -26,15 +26,27 @@ public class VenuesClient extends AbstractClient {
 	 */
 	public VenuesClient(WebTarget target) {
 		super(target.path("venues"));
-		throw new RuntimeException("This API endpoint is not yet implemented.");
 	}
 
 	/**
-	 * Request and return the list of venues.
-	 * @return list of venues
+	 * Request and return the list of venues for a country.
+	 * @param countryId - the ID of the country to query
+	 * @return list of venues for the country
 	 */
-	public List<Venue> list() {
-		Response<List<Venue>> response = getRequest().get(new GenericType<Response<List<Venue>>>() {});
+	public List<Venue> list(int countryId) {
+		if (countryId <= 0) throw new RuntimeException("countryId must be a positive number");
+		Response<List<Venue>> response = getTarget().queryParam("country_id", ""+countryId).request().get(new GenericType<Response<List<Venue>>>() {});
 		return response.getData();
 	}
+	
+	/**
+	 * Request and returns a specific venue.
+	 * @param id - id of venue
+	 * @return the venue requested or {@code null}
+	 */
+	public Venue get(int id) {
+		Response<Venue> response = getTarget().path(""+id).request().get(new GenericType<Response<Venue>>() {});
+		return response.getData();
+	}
+
 }

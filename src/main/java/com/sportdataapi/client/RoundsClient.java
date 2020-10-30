@@ -26,15 +26,27 @@ public class RoundsClient extends AbstractClient {
 	 */
 	public RoundsClient(WebTarget target) {
 		super(target.path("rounds"));
-		throw new RuntimeException("This API endpoint is not yet implemented.");
 	}
 
 	/**
-	 * Request and return the list of rounds.
-	 * @return list of rounds
+	 * Request and return the list of teams for a country.
+	 * @param seasonId - the ID of the season (of a league) to query
+	 * @return list of seasons for the country
 	 */
-	public List<Round> list() {
-		Response<List<Round>> response = getRequest().get(new GenericType<Response<List<Round>>>() {});
+	public List<Round> list(int seasonId) {
+		if (seasonId <= 0) throw new RuntimeException("seasonId must be a positive number");
+		Response<List<Round>> response = getTarget().queryParam("season_id", ""+seasonId).request().get(new GenericType<Response<List<Round>>>() {});
 		return response.getData();
 	}
+	
+	/**
+	 * Request and returns a specific round.
+	 * @param id - id of round
+	 * @return the round requested or {@code null}
+	 */
+	public Round get(int id) {
+		Response<Round> response = getTarget().path(""+id).request().get(new GenericType<Response<Round>>() {});
+		return response.getData();
+	}
+
 }
