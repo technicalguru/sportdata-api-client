@@ -1,8 +1,9 @@
 package com.sportdataapi.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.sportdataapi.util.RsDayDeserializer;
 
-import rs.baselib.util.RsDate;
 import rs.baselib.util.RsDay;
 
 /**
@@ -118,7 +119,9 @@ public class Season {
 	 * Returns the start.
 	 * @return the start
 	 */
-	public RsDate getStart() {
+	@JsonProperty("start_date")
+	@JsonDeserialize(using=RsDayDeserializer.class)
+	public RsDay getStart() {
 		return start;
 	}
 
@@ -126,6 +129,8 @@ public class Season {
 	 * Sets the start.
 	 * @param start - the start to set
 	 */
+	@JsonProperty("start_date")
+	@JsonDeserialize(using=RsDayDeserializer.class)
 	public void setStart(RsDay start) {
 		this.start = start;
 	}
@@ -134,6 +139,8 @@ public class Season {
 	 * Returns the end.
 	 * @return the end
 	 */
+	@JsonProperty("end_date")
+	@JsonDeserialize(using=RsDayDeserializer.class)
 	public RsDay getEnd() {
 		return end;
 	}
@@ -142,8 +149,18 @@ public class Season {
 	 * Sets the end.
 	 * @param end - the end to set
 	 */
+	@JsonProperty("end_date")
+	@JsonDeserialize(using=RsDayDeserializer.class)
 	public void setEnd(RsDay end) {
 		this.end = end;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		return "Season [id=" + id + ", name=" + name + ", current=" + current + ", country=" + country + ", league=" + league + ", start=" + start + ", end=" + end + "]";
 	}
 
 	

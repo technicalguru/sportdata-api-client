@@ -71,5 +71,11 @@ public class League {
 		this.name = name;
 	}
 
-	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		return "League [id=" + id + ", country=" + country + ", name=" + name + "]";
+	}
 }

@@ -26,15 +26,28 @@ public class SeasonsClient extends AbstractClient {
 	 */
 	public SeasonsClient(WebTarget target) {
 		super(target.path("seasons"));
-		throw new RuntimeException("This API endpoint is not yet implemented.");
 	}
 
 	/**
-	 * Request and return the list of seasons.
-	 * @return list of seasons
+	 * Request and return the list of seasons for a specific league.
+	 * @param leagueId - the ID of the league to query
+	 * @return list of seasons for the league
 	 */
-	public List<Season> list() {
-		Response<List<Season>> response = getRequest().get(new GenericType<Response<List<Season>>>() {});
+	public List<Season> list(int leagueId) {
+		if (leagueId <= 0) throw new RuntimeException("leagueId must be a positive number");
+		Response<List<Season>> response = getTarget().queryParam("league_id", ""+leagueId).request().get(new GenericType<Response<List<Season>>>() {});
 		return response.getData();
 	}
+	
+	/**
+	 * Request and returns a specific season.
+	 * @param id - id of season
+	 * @return the season requested or {@code null}
+	 */
+	public Season get(int id) {
+		Response<Season> response = getTarget().path(""+id).request().get(new GenericType<Response<Season>>() {});
+		return response.getData();
+	}
+
+
 }

@@ -36,4 +36,14 @@ public class CountriesClient extends AbstractClient {
 		Response<List<Country>> response = getRequest().get(new GenericType<Response<List<Country>>>() {});
 		return response.getData();
 	}
+
+	/**
+	 * Request and returns a specific country.
+	 * @param id - id of country
+	 * @return the country requested or {@code null}
+	 */
+	public Country get(int id) {
+		Response<Country> response = getTarget().path(""+id).request().get(new GenericType<Response<Country>>() {});
+		return response.getData();
+	}
 }

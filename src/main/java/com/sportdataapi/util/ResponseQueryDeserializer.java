@@ -1,6 +1,9 @@
 package com.sportdataapi.util;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -26,13 +29,19 @@ public class ResponseQueryDeserializer extends JsonDeserializer<ResponseQuery> {
 	 */
 	@Override
 	public ResponseQuery deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
-		ResponseQuery rc = new ResponseQuery();
+		Map<String,Object> values = new HashMap<>();
+		ResponseQuery rc  = new ResponseQuery();
 		JsonNode node     = p.readValueAsTree();
 		if (!node.isArray()) {
-			rc = p.readValueAs(ResponseQuery.class);
+			Iterator<Map.Entry<String,JsonNode>> i =  node.fields();
+			while (i.hasNext()) {
+				Map.Entry<String,JsonNode> entry = i.next();
+				String   name  = entry.getKey();
+				String   value = entry.getValue().asText();
+				values.put(name, value);
+			}
 		}
+		rc.setQueryValues(values);
 		return rc;
 	}
-
-	
 }
