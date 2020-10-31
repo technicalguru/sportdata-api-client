@@ -26,15 +26,60 @@ public class PlayersClient extends AbstractClient {
 	 */
 	public PlayersClient(WebTarget target) {
 		super(target.path("players"));
-		throw new RuntimeException("This API endpoint is not yet implemented.");
 	}
 
 	/**
 	 * Request and return the list of players.
+	 * @param countryId - ID of country of players
 	 * @return list of players
 	 */
-	public List<Player> list() {
-		Response<List<Player>> response = getRequest().get(new GenericType<Response<List<Player>>>() {});
+	public List<Player> list(int countryId) {
+		return list(countryId, 0, 0);
+	}
+
+	/**
+	 * Request and return the list of players.
+	 * @param countryId - ID of country of players
+	 * @param minAge    - minimum age of players
+	 * @return list of players
+	 */
+	public List<Player> listMinAge(int countryId, int minAge) {
+		return list(countryId, minAge, 0);
+	}
+	
+	/**
+	 * Request and return the list of players.
+	 * @param countryId - ID of country of players
+	 * @param maxAge    - maximum age of players
+	 * @return list of players
+	 */
+	public List<Player> listMaxAge(int countryId, int maxAge) {
+		return list(countryId, 0, maxAge);
+	}
+	
+	/**
+	 * Request and return the list of players.
+	 * @param countryId - ID of country of players
+	 * @param minAge    - minimum age of players
+	 * @param maxAge    - maximum age of players
+	 * @return list of players
+	 */
+	public List<Player> list(int countryId, int minAge, int maxAge) {
+		WebTarget target = getTarget().queryParam("country_id", ""+countryId);
+		if (minAge > 0) target = target.queryParam("min_age", ""+minAge);
+		if (maxAge > 0) target = target.queryParam("max_age", ""+maxAge);
+		Response<List<Player>> response = target.request().get(new GenericType<Response<List<Player>>>() {});
 		return response.getData();
 	}
+	
+	/**
+	 * Returns the player with given id.
+	 * @param id - ID of player
+	 * @return the player or {@code null}
+	 */
+	public Player get(int id) {
+		Response<Player> response = getTarget().path(""+id).request().get(new GenericType<Response<Player>>() {});
+		return response.getData();
+	}
+
 }

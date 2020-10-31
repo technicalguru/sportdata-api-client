@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import rs.baselib.util.RsDay;
 
 /**
- * Helps Jackson to deserialize a continent.
+ * Helps Jackson to deserialize a day.
  * @author ralph
  *
  */
