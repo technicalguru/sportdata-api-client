@@ -3,12 +3,10 @@
  */
 package com.sportdataapi.client;
 
-import java.util.List;
-
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 
-import com.sportdataapi.data.Standings;
+import com.sportdataapi.data.LeagueStandings;
 import com.sportdataapi.util.AbstractClient;
 import com.sportdataapi.util.Response;
 
@@ -26,15 +24,14 @@ public class StandingsClient extends AbstractClient {
 	 */
 	public StandingsClient(WebTarget target) {
 		super(target.path("standings"));
-		throw new RuntimeException("This API endpoint is not yet implemented.");
 	}
 
 	/**
 	 * Request and return the list of standings.
 	 * @return list of standings
 	 */
-	public List<Standings> list() {
-		Response<List<Standings>> response = getRequest().get(new GenericType<Response<List<Standings>>>() {});
+	public LeagueStandings get(int seasonId) {
+		Response<LeagueStandings> response = getTarget().queryParam("season_id", seasonId).request().get(new GenericType<Response<LeagueStandings>>() {});
 		return response.getData();
 	}
 }
