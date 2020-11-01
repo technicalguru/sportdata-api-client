@@ -37,7 +37,7 @@ public class LeaguesClientTest {
 				// Test German Bundesliga
 				found = true;
 				assertEquals("Invalid name for Bundesliga", "Bundesliga", c.getName());
-				assertEquals("Invalid country for Bundesliga", 48, c.getCountry());
+				assertEquals("Invalid country for Bundesliga", 48, c.getCountryId());
 			}
 		}
 		assertTrue("Bundesliga 1 not in list of leagues", found);
@@ -58,7 +58,7 @@ public class LeaguesClientTest {
 				// Test German Bundesliga
 				found = true;
 				assertEquals("Invalid name for Bundesliga", "Bundesliga", c.getName());
-				assertEquals("Invalid country for Bundesliga", 48, c.getCountry());
+				assertEquals("Invalid country for Bundesliga", 48, c.getCountryId());
 			}
 		}
 		assertTrue("Bundesliga 1 not is list of leagues", found);
@@ -84,6 +84,6 @@ public class LeaguesClientTest {
 		assertNotNull("League not found", c);
 		// Test German Bundesliga
 		assertEquals("Invalid name for Bundesliga", "Bundesliga", c.getName());
-		assertEquals("Invalid country for Bundesliga", 48, c.getCountry());
+		assertEquals("Invalid country for Bundesliga", 48, c.getCountryId());
 	}	
 }

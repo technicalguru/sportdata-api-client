@@ -3,6 +3,8 @@
  */
 package com.sportdataapi.data;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Team statistics object for sportdatapi.com.
  * @author ralph
@@ -45,6 +47,7 @@ public class TeamStats {
 	 * Returns the teamId.
 	 * @return the teamId
 	 */
+	@JsonProperty("team_id")
 	public int getTeamId() {
 		return teamId;
 	}
@@ -53,6 +56,7 @@ public class TeamStats {
 	 * Sets the teamId.
 	 * @param teamId the teamId to set
 	 */
+	@JsonProperty("team_id")
 	public void setTeamId(int teamId) {
 		this.teamId = teamId;
 	}
@@ -61,6 +65,7 @@ public class TeamStats {
 	 * Returns the teamName.
 	 * @return the teamName
 	 */
+	@JsonProperty("team_name")
 	public String getTeamName() {
 		return teamName;
 	}
@@ -69,6 +74,7 @@ public class TeamStats {
 	 * Sets the teamName.
 	 * @param teamName the teamName to set
 	 */
+	@JsonProperty("team_name")
 	public void setTeamName(String teamName) {
 		this.teamName = teamName;
 	}
@@ -141,6 +147,7 @@ public class TeamStats {
 	 * Returns the shotsOnTarget.
 	 * @return the shotsOnTarget
 	 */
+	@JsonProperty("shots_on_target")
 	public int getShotsOnTarget() {
 		return shotsOnTarget;
 	}
@@ -149,6 +156,7 @@ public class TeamStats {
 	 * Sets the shotsOnTarget.
 	 * @param shotsOnTarget the shotsOnTarget to set
 	 */
+	@JsonProperty("shots_on_target")
 	public void setShotsOnTarget(int shotsOnTarget) {
 		this.shotsOnTarget = shotsOnTarget;
 	}
@@ -157,6 +165,7 @@ public class TeamStats {
 	 * Returns the shotsOffTarget.
 	 * @return the shotsOffTarget
 	 */
+	@JsonProperty("shots_off_target")
 	public int getShotsOffTarget() {
 		return shotsOffTarget;
 	}
@@ -165,6 +174,7 @@ public class TeamStats {
 	 * Sets the shotsOffTarget.
 	 * @param shotsOffTarget the shotsOffTarget to set
 	 */
+	@JsonProperty("shots_off_target")
 	public void setShotsOffTarget(int shotsOffTarget) {
 		this.shotsOffTarget = shotsOffTarget;
 	}
@@ -173,6 +183,7 @@ public class TeamStats {
 	 * Returns the shotsBlocked.
 	 * @return the shotsBlocked
 	 */
+	@JsonProperty("shots_blocked")
 	public int getShotsBlocked() {
 		return shotsBlocked;
 	}
@@ -181,6 +192,7 @@ public class TeamStats {
 	 * Sets the shotsBlocked.
 	 * @param shotsBlocked the shotsBlocked to set
 	 */
+	@JsonProperty("shots_blocked")
 	public void setShotsBlocked(int shotsBlocked) {
 		this.shotsBlocked = shotsBlocked;
 	}
@@ -189,6 +201,7 @@ public class TeamStats {
 	 * Returns the possessionTime.
 	 * @return the possessionTime
 	 */
+	@JsonProperty("posession_time")
 	public int getPossessionTime() {
 		return possessionTime;
 	}
@@ -197,6 +210,7 @@ public class TeamStats {
 	 * Sets the possessionTime.
 	 * @param possessionTime the possessionTime to set
 	 */
+	@JsonProperty("posession_time")
 	public void setPossessionTime(int possessionTime) {
 		this.possessionTime = possessionTime;
 	}
@@ -205,6 +219,7 @@ public class TeamStats {
 	 * Returns the possessionPercent.
 	 * @return the possessionPercent
 	 */
+	@JsonProperty("posession_percent")
 	public int getPossessionPercent() {
 		return possessionPercent;
 	}
@@ -213,6 +228,7 @@ public class TeamStats {
 	 * Sets the possessionPercent.
 	 * @param possessionPercent the possessionPercent to set
 	 */
+	@JsonProperty("posession_percent")
 	public void setPossessionPercent(int possessionPercent) {
 		this.possessionPercent = possessionPercent;
 	}
@@ -221,6 +237,7 @@ public class TeamStats {
 	 * Returns the yellowCards.
 	 * @return the yellowCards
 	 */
+	@JsonProperty("yellow_cards")
 	public int getYellowCards() {
 		return yellowCards;
 	}
@@ -229,6 +246,7 @@ public class TeamStats {
 	 * Sets the yellowCards.
 	 * @param yellowCards the yellowCards to set
 	 */
+	@JsonProperty("yellow_cards")
 	public void setYellowCards(int yellowCards) {
 		this.yellowCards = yellowCards;
 	}
@@ -237,6 +255,7 @@ public class TeamStats {
 	 * Returns the yellowRedCards.
 	 * @return the yellowRedCards
 	 */
+	@JsonProperty("yellowred_cards")
 	public int getYellowRedCards() {
 		return yellowRedCards;
 	}
@@ -245,6 +264,7 @@ public class TeamStats {
 	 * Sets the yellowRedCards.
 	 * @param yellowRedCards the yellowRedCards to set
 	 */
+	@JsonProperty("yellowred_cards")
 	public void setYellowRedCards(int yellowRedCards) {
 		this.yellowRedCards = yellowRedCards;
 	}
@@ -253,6 +273,7 @@ public class TeamStats {
 	 * Returns the redCards.
 	 * @return the redCards
 	 */
+	@JsonProperty("red_cards")
 	public int getRedCards() {
 		return redCards;
 	}
@@ -261,6 +282,7 @@ public class TeamStats {
 	 * Sets the redCards.
 	 * @param redCards the redCards to set
 	 */
+	@JsonProperty("red_cards")
 	public void setRedCards(int redCards) {
 		this.redCards = redCards;
 	}
@@ -285,6 +307,7 @@ public class TeamStats {
 	 * Returns the goalKicks.
 	 * @return the goalKicks
 	 */
+	@JsonProperty("goal_kicks")
 	public int getGoalKicks() {
 		return goalKicks;
 	}
@@ -293,6 +316,7 @@ public class TeamStats {
 	 * Sets the goalKicks.
 	 * @param goalKicks the goalKicks to set
 	 */
+	@JsonProperty("goal_kicks")
 	public void setGoalKicks(int goalKicks) {
 		this.goalKicks = goalKicks;
 	}
@@ -301,6 +325,7 @@ public class TeamStats {
 	 * Returns the goalAttempts.
 	 * @return the goalAttempts
 	 */
+	@JsonProperty("goal_attempts")
 	public int getGoalAttempts() {
 		return goalAttempts;
 	}
@@ -309,6 +334,7 @@ public class TeamStats {
 	 * Sets the goalAttempts.
 	 * @param goalAttempts the goalAttempts to set
 	 */
+	@JsonProperty("goal_attempts")
 	public void setGoalAttempts(int goalAttempts) {
 		this.goalAttempts = goalAttempts;
 	}
@@ -317,6 +343,7 @@ public class TeamStats {
 	 * Returns the freeKicks.
 	 * @return the freeKicks
 	 */
+	@JsonProperty("free_kick")
 	public int getFreeKicks() {
 		return freeKicks;
 	}
@@ -325,6 +352,7 @@ public class TeamStats {
 	 * Sets the freeKicks.
 	 * @param freeKicks the freeKicks to set
 	 */
+	@JsonProperty("free_kick")
 	public void setFreeKicks(int freeKicks) {
 		this.freeKicks = freeKicks;
 	}
@@ -333,6 +361,7 @@ public class TeamStats {
 	 * Returns the throwIns.
 	 * @return the throwIns
 	 */
+	@JsonProperty("throw_in")
 	public int getThrowIns() {
 		return throwIns;
 	}
@@ -341,6 +370,7 @@ public class TeamStats {
 	 * Sets the throwIns.
 	 * @param throwIns the throwIns to set
 	 */
+	@JsonProperty("throw_in")
 	public void setThrowIns(int throwIns) {
 		this.throwIns = throwIns;
 	}
@@ -349,6 +379,7 @@ public class TeamStats {
 	 * Returns the ballSafes.
 	 * @return the ballSafes
 	 */
+	@JsonProperty("ball_safe")
 	public int getBallSafes() {
 		return ballSafes;
 	}
@@ -357,6 +388,7 @@ public class TeamStats {
 	 * Sets the ballSafes.
 	 * @param ballSafes the ballSafes to set
 	 */
+	@JsonProperty("ball_safe")
 	public void setBallSafes(int ballSafes) {
 		this.ballSafes = ballSafes;
 	}
@@ -413,6 +445,7 @@ public class TeamStats {
 	 * Returns the dangerousAttacks.
 	 * @return the dangerousAttacks
 	 */
+	@JsonProperty("dangerous_attacks")
 	public int getDangerousAttacks() {
 		return dangerousAttacks;
 	}
@@ -421,6 +454,7 @@ public class TeamStats {
 	 * Sets the dangerousAttacks.
 	 * @param dangerousAttacks the dangerousAttacks to set
 	 */
+	@JsonProperty("dangerous_attacks")
 	public void setDangerousAttacks(int dangerousAttacks) {
 		this.dangerousAttacks = dangerousAttacks;
 	}

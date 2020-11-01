@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class League {
 
 	private int id;
-	private int country;
+	private int countryId;
 	private String name;
 	
 	/**
@@ -38,21 +38,21 @@ public class League {
 	}
 
 	/**
-	 * Returns the country.
-	 * @return the country
+	 * Returns the countryId.
+	 * @return the countryId
 	 */
 	@JsonProperty("country_id")
-	public int getCountry() {
-		return country;
+	public int getCountryId() {
+		return countryId;
 	}
 
 	/**
-	 * Sets the country.
-	 * @param country - the country to set
+	 * Sets the countryId.
+	 * @param countryId - the countryId to set
 	 */
 	@JsonProperty("country_id")
-	public void setCountry(int country) {
-		this.country = country;
+	public void setCountryId(int countryId) {
+		this.countryId = countryId;
 	}
 
 	/**
@@ -76,6 +76,6 @@ public class League {
 	 */
 	@Override
 	public String toString() {
-		return "League [id=" + id + ", country=" + country + ", name=" + name + "]";
+		return "League [id=" + id + ", countryId=" + countryId + ", name=" + name + "]";
 	}
 }

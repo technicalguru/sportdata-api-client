@@ -36,8 +36,8 @@ public class MatchesClientTest {
 			if (c.getId() == 178014) {
 				// Test match
 				found = true;
-				assertEquals("Invalid league for match", 314, c.getLeague());
-				assertEquals("Invalid season for match", 503, c.getSeason());
+				assertEquals("Invalid league for match", 314, c.getLeagueId());
+				assertEquals("Invalid season for match", 503, c.getSeasonId());
 				assertEquals("Invalid status for match", MatchStatus.ENDED, c.getStatus());
 				assertEquals("Invalid statusText for match", "finished", c.getStatusText());
 				assertTrue("Invalid start for match: "+c.getStart().toString(), c.getStart().toString().indexOf("2020-01-25T17:30:00") > 0);
@@ -81,8 +81,8 @@ public class MatchesClientTest {
 		Match c = client.get(178014);
 		assertNotNull("Match not found", c);
 		// Test match
-		assertEquals("Invalid league for match", 314, c.getLeague());
-		assertEquals("Invalid season for match", 503, c.getSeason());
+		assertEquals("Invalid league for match", 314, c.getLeagueId());
+		assertEquals("Invalid season for match", 503, c.getSeasonId());
 		assertEquals("Invalid status for match", MatchStatus.ENDED, c.getStatus());
 		assertEquals("Invalid statusText for match", "finished", c.getStatusText());
 		assertTrue("Invalid start for match: "+c.getStart().toString(), c.getStart().toString().indexOf("2020-01-25T17:30:00") > 0);

@@ -107,20 +107,20 @@ public class Venue {
 	}
 
 	/**
-	 * Returns the country.
-	 * @return the country
-	 */
-	public Country getCountry() {
-		return country;
-	}
-
-	/**
 	 * Sets the country.
 	 * @param country the country to set
 	 */
 	public void setCountry(Country country) {
 		this.country = country;
 		if (country != null) setCountryId(country.getId());
+	}
+
+	/**
+	 * Returns the country.
+	 * @return the country
+	 */
+	public Country getCountry() {
+		return country;
 	}
 
 	/**

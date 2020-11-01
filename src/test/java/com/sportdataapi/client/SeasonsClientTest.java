@@ -37,8 +37,8 @@ public class SeasonsClientTest {
 				// Test German Bundesliga season 20/21
 				found = true;
 				assertEquals("Invalid name for Bundesliga Season 20/21",      "20/21", c.getName());
-				assertEquals("Invalid countryId for Bundesliga Season 20/21", 48, c.getCountry());
-				assertEquals("Invalid leagueId for Bundesliga Season 20/21",  314, c.getLeague());
+				assertEquals("Invalid countryId for Bundesliga Season 20/21", 48, c.getCountryId());
+				assertEquals("Invalid leagueId for Bundesliga Season 20/21",  314, c.getLeagueId());
 				assertEquals("Invalid startDate for Bundesliga Season 20/21", "20200918", c.getStart().getKey());
 				assertEquals("Invalid endDate for Bundesliga Season 20/21",   "20210529", c.getEnd().getKey());
 			}
@@ -56,8 +56,8 @@ public class SeasonsClientTest {
 		assertNotNull("Season not found", c);
 		// Test German Bundesliga season 20/21
 		assertEquals("Invalid name for Bundesliga Season 20/21",      "20/21", c.getName());
-		assertEquals("Invalid countryId for Bundesliga Season 20/21", 48, c.getCountry());
-		assertEquals("Invalid leagueId for Bundesliga Season 20/21",  314, c.getLeague());
+		assertEquals("Invalid countryId for Bundesliga Season 20/21", 48, c.getCountryId());
+		assertEquals("Invalid leagueId for Bundesliga Season 20/21",  314, c.getLeagueId());
 		assertEquals("Invalid startDate for Bundesliga Season 20/21", "20200918", c.getStart().getKey());
 		assertEquals("Invalid endDate for Bundesliga Season 20/21",   "20210529", c.getEnd().getKey());
 	}	
