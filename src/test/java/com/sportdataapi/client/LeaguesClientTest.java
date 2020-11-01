@@ -40,7 +40,7 @@ public class LeaguesClientTest {
 				assertEquals("Invalid country for Bundesliga", 48, c.getCountry());
 			}
 		}
-		assertTrue("Bundesliga 1 not is list of leagues", found);
+		assertTrue("Bundesliga 1 not in list of leagues", found);
 	}
 
 	/**

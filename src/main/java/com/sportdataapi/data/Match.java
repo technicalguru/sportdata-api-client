@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.sportdataapi.util.MatchStatusDeserializer;
 import com.sportdataapi.util.RsDateDeserializer;
 
 import rs.baselib.util.RsDate;
@@ -63,7 +62,6 @@ public class Match {
 	 * @return the status
 	 */
 	@JsonProperty("status_code")
-	@JsonDeserialize(using=MatchStatusDeserializer.class)
 	public MatchStatus getStatus() {
 		return status;
 	}
@@ -73,7 +71,6 @@ public class Match {
 	 * @param status the status to set
 	 */
 	@JsonProperty("status_code")
-	@JsonDeserialize(using=MatchStatusDeserializer.class)
 	public void setStatus(MatchStatus status) {
 		this.status = status;
 	}

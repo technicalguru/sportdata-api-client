@@ -146,6 +146,17 @@ public class TeamStandings {
 		this.awayStats = awayStats;
 	}
 
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		return "TeamStandings [teamId=" + teamId + ", points=" + points + ", status=" + status + ", result=" + result
+				+ ", overallStats=" + overallStats + ", homeStats=" + homeStats + ", awayStats=" + awayStats + "]";
+	}
+
+
 	/**
 	 * Statistics about the goals and wins.
 	 * @author ralph
@@ -285,6 +296,16 @@ public class TeamStandings {
 		@JsonProperty("goals_against")
 		public void setGoalsAgainst(int goalsAgainst) {
 			this.goalsAgainst = goalsAgainst;
+		}
+
+		/**
+		 * {@inheritDoc}
+		 */
+		@Override
+		public String toString() {
+			return "StandingsStats [gamesPlayed=" + gamesPlayed + ", won=" + won + ", draw=" + draw + ", lost=" + lost
+					+ ", goalsDiff=" + goalsDiff + ", goalsScored=" + goalsScored + ", goalsAgainst=" + goalsAgainst
+					+ "]";
 		}
 		
 		

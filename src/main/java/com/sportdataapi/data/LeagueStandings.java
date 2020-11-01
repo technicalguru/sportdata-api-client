@@ -114,5 +114,14 @@ public class LeagueStandings {
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		return "LeagueStandings [leagueId=" + leagueId + ", seasonId=" + seasonId + ", hasGroups=" + hasGroups
+				+ ", teamStandings=" + teamStandings + ", groupStandings=" + groupStandings + "]";
+	}
+
 	
 }

@@ -26,15 +26,15 @@ public class TopScorersClient extends AbstractClient {
 	 */
 	public TopScorersClient(WebTarget target) {
 		super(target.path("topscorers"));
-		throw new RuntimeException("This API endpoint is not yet implemented.");
 	}
 
 	/**
-	 * Request and return the list of top scorers.
+	 * Request and return the list of top scorers for a season.
+	 * @param seasonId - the ID of the season
 	 * @return list of top scorers
 	 */
-	public List<TopScorer> list() {
-		Response<List<TopScorer>> response = getRequest().get(new GenericType<Response<List<TopScorer>>>() {});
+	public List<TopScorer> get(int seasonId) {
+		Response<List<TopScorer>> response = getTarget().queryParam("season_id", seasonId).request().get(new GenericType<Response<List<TopScorer>>>() {});
 		return response.getData();
 	}
 }

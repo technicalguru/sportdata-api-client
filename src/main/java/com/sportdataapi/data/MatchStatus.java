@@ -3,10 +3,14 @@
  */
 package com.sportdataapi.data;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.sportdataapi.util.MatchStatusDeserializer;
+
 /**
  * @author ralph
  *
  */
+@JsonDeserialize(using=MatchStatusDeserializer.class)
 public enum MatchStatus {
 
 	NOT_STARTED     (0,  SimpleMatchStatus.NOT_STARTED, "The event has not started"),

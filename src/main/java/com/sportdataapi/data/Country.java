@@ -1,8 +1,6 @@
 package com.sportdataapi.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.sportdataapi.util.ContinentDeserializer;
 
 /**
  * Country object for Sportdataapi.com.
@@ -86,7 +84,6 @@ public class Country {
 	 * Sets the continent.
 	 * @param continent - the continent to set
 	 */
-	@JsonDeserialize(using=ContinentDeserializer.class)
 	public void setContinent(Continent continent) {
 		this.continent = continent;
 	}

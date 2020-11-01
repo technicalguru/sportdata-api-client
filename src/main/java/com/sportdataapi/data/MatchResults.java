@@ -5,8 +5,6 @@ package com.sportdataapi.data;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.sportdataapi.util.MatchResultDeserializer;
 
 /**
  * Provides various match results for a match.
@@ -70,7 +68,6 @@ public class MatchResults {
 	 * @return the halfTime
 	 */
 	@JsonProperty("ht_score")
-	@JsonDeserialize(using=MatchResultDeserializer.class)
 	public MatchResult getHalfTime() {
 		return halfTime;
 	}
@@ -80,7 +77,6 @@ public class MatchResults {
 	 * @param halfTime the halfTime to set
 	 */
 	@JsonProperty("ht_score")
-	@JsonDeserialize(using=MatchResultDeserializer.class)
 	public void setHalfTime(MatchResult halfTime) {
 		this.halfTime = halfTime;
 	}
@@ -90,7 +86,6 @@ public class MatchResults {
 	 * @return the endTime
 	 */
 	@JsonProperty("ft_score")
-	@JsonDeserialize(using=MatchResultDeserializer.class)
 	public MatchResult getEndTime() {
 		return endTime;
 	}
@@ -100,7 +95,6 @@ public class MatchResults {
 	 * @param endTime the endTime to set
 	 */
 	@JsonProperty("ft_score")
-	@JsonDeserialize(using=MatchResultDeserializer.class)
 	public void setEndTime(MatchResult endTime) {
 		this.endTime = endTime;
 	}
@@ -110,7 +104,6 @@ public class MatchResults {
 	 * @return the extraTime
 	 */
 	@JsonProperty("et_score")
-	@JsonDeserialize(using=MatchResultDeserializer.class)
 	public MatchResult getExtraTime() {
 		return extraTime;
 	}
@@ -120,7 +113,6 @@ public class MatchResults {
 	 * @param extraTime the extraTime to set
 	 */
 	@JsonProperty("et_score")
-	@JsonDeserialize(using=MatchResultDeserializer.class)
 	public void setExtraTime(MatchResult extraTime) {
 		this.extraTime = extraTime;
 	}
@@ -130,7 +122,6 @@ public class MatchResults {
 	 * @return the penalties
 	 */
 	@JsonProperty("ps_score")
-	@JsonDeserialize(using=MatchResultDeserializer.class)
 	public MatchResult getPenalties() {
 		return penalties;
 	}
@@ -140,7 +131,6 @@ public class MatchResults {
 	 * @param penalties the penalties to set
 	 */
 	@JsonProperty("ps_score")
-	@JsonDeserialize(using=MatchResultDeserializer.class)
 	public void setPenalties(MatchResult penalties) {
 		this.penalties = penalties;
 	}

@@ -19,7 +19,7 @@
 	</properties>
 
 	<groupId>eu.ralph-schuster</groupId>
-	<artifactId>sportdata-api</artifactId>
+	<artifactId>sportdata-api-client</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 
 	<name>sportdata-api</name>

@@ -3,11 +3,15 @@
  */
 package com.sportdataapi.data;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.sportdataapi.util.MatchResultDeserializer;
+
 /**
  * Match results in a match.
  * @author ralph
  *
  */
+@JsonDeserialize(using=MatchResultDeserializer.class)
 public class MatchResult {
 
 	private int homeScore;

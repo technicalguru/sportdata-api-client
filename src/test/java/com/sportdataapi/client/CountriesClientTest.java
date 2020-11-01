@@ -42,7 +42,7 @@ public class CountriesClientTest {
 				assertEquals("Invalid continent for GERMANY", Continent.EUROPE, c.getContinent());				
 			}
 		}
-		assertTrue("Germany not is list of countries", found);
+		assertTrue("Germany not in list of countries", found);
 	}
 
 	/**

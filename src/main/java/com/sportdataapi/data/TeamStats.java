@@ -4,6 +4,7 @@
 package com.sportdataapi.data;
 
 /**
+ * Team statistics object for sportdatapi.com.
  * @author ralph
  *
  */

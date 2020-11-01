@@ -1,10 +1,14 @@
 package com.sportdataapi.data;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.sportdataapi.util.ContinentDeserializer;
+
 /**
  * A continent.
  * @author ralph
  *
  */
+@JsonDeserialize(using=ContinentDeserializer.class)
 public enum Continent {
 
 	AFRICA("Africa"),

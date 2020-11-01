@@ -1,7 +1,5 @@
 package com.sportdataapi.util;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-
 /**
  * API Response Object
  * @author ralph
@@ -30,7 +28,6 @@ public class Response<T> {
 	 * Returns the query.
 	 * @return the query
 	 */
-	@JsonDeserialize(using=ResponseQueryDeserializer.class)
 	public ResponseQuery getQuery() {
 		return query;
 	}
@@ -39,7 +36,6 @@ public class Response<T> {
 	 * Sets the query.
 	 * @param query - the query to set
 	 */
-	@JsonDeserialize(using=ResponseQueryDeserializer.class)
 	public void setQuery(ResponseQuery query) {
 		this.query = query;
 	}

@@ -38,5 +38,13 @@ public class Status {
 		this.remainingRequests = remainingRequests;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		return "Status [remainingRequests=" + remainingRequests + "]";
+	}
+
 	
 }

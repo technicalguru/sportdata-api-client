@@ -29,7 +29,13 @@ public class MatchResultDeserializer extends JsonDeserializer<MatchResult> {
 	public MatchResult deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
 		JsonNode node    = p.readValueAsTree();
 		if (!node.isNull()) {
-			String results[] = node.asText().split("-", 2);
+			String s = node.asText();
+			String results[];
+			if (s.indexOf(':') > 0) {
+				results = s.split(":", 2);
+			} else {
+				results = s.split("-", 2);
+			}
 			if (results.length == 2) {
 				return new MatchResult(Integer.valueOf(results[0]), Integer.valueOf(results[1]));
 			}

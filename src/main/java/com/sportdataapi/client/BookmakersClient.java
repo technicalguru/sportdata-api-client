@@ -26,7 +26,6 @@ public class BookmakersClient extends AbstractClient {
 	 */
 	public BookmakersClient(WebTarget target) {
 		super(target.path("bookmakers"));
-		throw new RuntimeException("This API endpoint is not yet implemented.");
 	}
 
 	/**
@@ -37,4 +36,15 @@ public class BookmakersClient extends AbstractClient {
 		Response<List<Bookmaker>> response = getRequest().get(new GenericType<Response<List<Bookmaker>>>() {});
 		return response.getData();
 	}
+	
+	/**
+	 * Request and returns a specific bookmaker.
+	 * @param id - id of bookmaker
+	 * @return the bookmaker requested or {@code null}
+	 */
+	public Bookmaker get(int id) {
+		Response<Bookmaker> response = getTarget().path(""+id).request().get(new GenericType<Response<Bookmaker>>() {});
+		return response.getData();
+	}
+
 }

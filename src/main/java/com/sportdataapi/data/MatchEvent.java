@@ -4,8 +4,6 @@
 package com.sportdataapi.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.sportdataapi.util.MatchResultDeserializer;
 
 /**
  * Provides data about an event in the match.
@@ -246,7 +244,6 @@ public class MatchEvent {
 	 * Returns the result.
 	 * @return the result
 	 */
-	@JsonDeserialize(using=MatchResultDeserializer.class)
 	public MatchResult getResult() {
 		return result;
 	}
@@ -255,7 +252,6 @@ public class MatchEvent {
 	 * Sets the result.
 	 * @param result the result to set
 	 */
-	@JsonDeserialize(using=MatchResultDeserializer.class)
 	public void setResult(MatchResult result) {
 		this.result = result;
 	}

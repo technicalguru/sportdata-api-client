@@ -26,7 +26,6 @@ public class MarketsClient extends AbstractClient {
 	 */
 	public MarketsClient(WebTarget target) {
 		super(target.path("markets"));
-		throw new RuntimeException("This API endpoint is not yet implemented.");
 	}
 
 	/**
@@ -37,4 +36,15 @@ public class MarketsClient extends AbstractClient {
 		Response<List<Market>> response = getRequest().get(new GenericType<Response<List<Market>>>() {});
 		return response.getData();
 	}
+	
+	/**
+	 * Request and returns a specific market.
+	 * @param id - id of market
+	 * @return the market requested or {@code null}
+	 */
+	public Market get(int id) {
+		Response<Market> response = getTarget().path(""+id).request().get(new GenericType<Response<Market>>() {});
+		return response.getData();
+	}
+
 }

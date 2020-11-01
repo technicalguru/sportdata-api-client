@@ -17,6 +17,11 @@ import com.sportdataapi.util.ClientFilter;
  */
 public class SportDataClient extends AbstractClient {
 
+	public static String NAME    = "sportdata-api-client";
+	public static String VERSION = "0.1";
+	public static String URL     = "https://github.com/technicalguru/sportdata-api";
+	
+			
 	private Client          client;
 	private ClientFilter    filter;
 	

@@ -3,11 +3,14 @@ package com.sportdataapi.util;
 import java.util.List;
 import java.util.Map;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 /**
  * Query Response information.
  * @author ralph
  *
  */
+@JsonDeserialize(using=ResponseQueryDeserializer.class)
 public class ResponseQuery {
 
 	private Map<String,Object> queryValues;

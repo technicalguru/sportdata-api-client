@@ -3,8 +3,6 @@
  */
 package com.sportdataapi.client;
 
-import java.util.List;
-
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 
@@ -26,15 +24,25 @@ public class OddsClient extends AbstractClient {
 	 */
 	public OddsClient(WebTarget target) {
 		super(target.path("odds"));
-		throw new RuntimeException("This API endpoint is not yet implemented.");
 	}
 
 	/**
-	 * Request and return the list of odds.
-	 * @return list of odds
+	 * Request and return the prematch odds for a match.
+	 * @param matchId - ID of match
+	 * @return list of prematch odds
 	 */
-	public List<Odds> list() {
-		Response<List<Odds>> response = getRequest().get(new GenericType<Response<List<Odds>>>() {});
+	public Odds getPrematch(int matchId) {
+		Response<Odds> response = getTarget().path(""+matchId).queryParam("type", "prematch").request().get(new GenericType<Response<Odds>>() {});
+		return response.getData();
+	}
+
+	/**
+	 * Request and return the inplay odds for a match.
+	 * @param matchId - ID of match
+	 * @return list of inplay odds
+	 */
+	public Odds getInplay(int matchId) {
+		Response<Odds> response = getTarget().path(""+matchId).queryParam("type", "inplay").request().get(new GenericType<Response<Odds>>() {});
 		return response.getData();
 	}
 }
