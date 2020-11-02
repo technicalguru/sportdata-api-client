@@ -18,6 +18,7 @@ public class TeamStats {
 	private int injuries;
 	private int corners;
 	private int offsides;
+	private int shotsTotal;
 	private int shotsOnTarget;
 	private int shotsOffTarget;
 	private int shotsBlocked;
@@ -144,6 +145,24 @@ public class TeamStats {
 	}
 
 	/**
+	 * Returns the shotsTotal.
+	 * @return the shotsTotal
+	 */
+	@JsonProperty("shots_total")
+	public int getShotsTotal() {
+		return shotsTotal;
+	}
+
+	/**
+	 * Sets the shotsTotal.
+	 * @param shotsTotal the shotsTotal to set
+	 */
+	@JsonProperty("shots_total")
+	public void setShotsTotal(int shotsTotal) {
+		this.shotsTotal = shotsTotal;
+	}
+
+	/**
 	 * Returns the shotsOnTarget.
 	 * @return the shotsOnTarget
 	 */
@@ -201,7 +220,7 @@ public class TeamStats {
 	 * Returns the possessionTime.
 	 * @return the possessionTime
 	 */
-	@JsonProperty("posession_time")
+	@JsonProperty("possessiontime")
 	public int getPossessionTime() {
 		return possessionTime;
 	}
@@ -210,7 +229,7 @@ public class TeamStats {
 	 * Sets the possessionTime.
 	 * @param possessionTime the possessionTime to set
 	 */
-	@JsonProperty("posession_time")
+	@JsonProperty("possessiontime")
 	public void setPossessionTime(int possessionTime) {
 		this.possessionTime = possessionTime;
 	}
@@ -219,7 +238,7 @@ public class TeamStats {
 	 * Returns the possessionPercent.
 	 * @return the possessionPercent
 	 */
-	@JsonProperty("posession_percent")
+	@JsonProperty("possessionpercent")
 	public int getPossessionPercent() {
 		return possessionPercent;
 	}
@@ -228,7 +247,7 @@ public class TeamStats {
 	 * Sets the possessionPercent.
 	 * @param possessionPercent the possessionPercent to set
 	 */
-	@JsonProperty("posession_percent")
+	@JsonProperty("possessionpercent")
 	public void setPossessionPercent(int possessionPercent) {
 		this.possessionPercent = possessionPercent;
 	}
@@ -237,7 +256,7 @@ public class TeamStats {
 	 * Returns the yellowCards.
 	 * @return the yellowCards
 	 */
-	@JsonProperty("yellow_cards")
+	@JsonProperty("yellowcards")
 	public int getYellowCards() {
 		return yellowCards;
 	}
@@ -246,7 +265,7 @@ public class TeamStats {
 	 * Sets the yellowCards.
 	 * @param yellowCards the yellowCards to set
 	 */
-	@JsonProperty("yellow_cards")
+	@JsonProperty("yellowcards")
 	public void setYellowCards(int yellowCards) {
 		this.yellowCards = yellowCards;
 	}
@@ -255,7 +274,7 @@ public class TeamStats {
 	 * Returns the yellowRedCards.
 	 * @return the yellowRedCards
 	 */
-	@JsonProperty("yellowred_cards")
+	@JsonProperty("yellowredcards")
 	public int getYellowRedCards() {
 		return yellowRedCards;
 	}
@@ -264,7 +283,7 @@ public class TeamStats {
 	 * Sets the yellowRedCards.
 	 * @param yellowRedCards the yellowRedCards to set
 	 */
-	@JsonProperty("yellowred_cards")
+	@JsonProperty("yellowredcards")
 	public void setYellowRedCards(int yellowRedCards) {
 		this.yellowRedCards = yellowRedCards;
 	}
@@ -273,7 +292,7 @@ public class TeamStats {
 	 * Returns the redCards.
 	 * @return the redCards
 	 */
-	@JsonProperty("red_cards")
+	@JsonProperty("redcards")
 	public int getRedCards() {
 		return redCards;
 	}
@@ -282,7 +301,7 @@ public class TeamStats {
 	 * Sets the redCards.
 	 * @param redCards the redCards to set
 	 */
-	@JsonProperty("red_cards")
+	@JsonProperty("redcards")
 	public void setRedCards(int redCards) {
 		this.redCards = redCards;
 	}
@@ -307,7 +326,7 @@ public class TeamStats {
 	 * Returns the goalKicks.
 	 * @return the goalKicks
 	 */
-	@JsonProperty("goal_kicks")
+	@JsonProperty("goal_kick")
 	public int getGoalKicks() {
 		return goalKicks;
 	}
@@ -316,7 +335,7 @@ public class TeamStats {
 	 * Sets the goalKicks.
 	 * @param goalKicks the goalKicks to set
 	 */
-	@JsonProperty("goal_kicks")
+	@JsonProperty("goal_kick")
 	public void setGoalKicks(int goalKicks) {
 		this.goalKicks = goalKicks;
 	}

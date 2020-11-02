@@ -76,7 +76,7 @@ public class MatchesClientTest {
 	 * Tests the get() method.
 	 */
 	@Test
-	public void testGet() {
+	public void testGet1() {
 		MatchesClient client = ClientProvider.getClient().soccer().matches();
 		Match c = client.get(178014);
 		assertNotNull("Match not found", c);
@@ -96,5 +96,43 @@ public class MatchesClientTest {
 		assertNotNull("No guestTeamLineup for match", c.getGuestTeamLineup());
 		assertEquals("Invalid number of players in guestTeamLineup for match", 11, c.getGuestTeamLineup().getPlayers().size());
 		assertEquals("Invalid venue for match", 1927, c.getVenue().getId());
-	}	
+	}
+	
+	/**
+	 * Tests the get() method.
+	 */
+	@Test
+	public void testGet2() {
+		MatchesClient client = ClientProvider.getClient().soccer().matches();
+		Match c = client.get(139383);
+		assertNotNull("Match not found", c);
+		// Test match
+		assertEquals("Invalid league for match", 314, c.getLeagueId());
+		assertEquals("Invalid season for match", 496, c.getSeasonId());
+		assertEquals("Invalid status for match", MatchStatus.ENDED, c.getStatus());
+		assertEquals("Invalid statusText for match", "finished", c.getStatusText());
+		assertEquals("Invalid statusText for match", 4066, c.getHomeTeamStats().getTeamId());
+		assertEquals("Invalid statusText for match", "FC Bayern Munich", c.getHomeTeamStats().getTeamName());
+		assertEquals("Invalid statusText for match", 11, c.getHomeTeamStats().getFouls());
+		assertEquals("Invalid statusText for match", 0, c.getHomeTeamStats().getInjuries());
+		assertEquals("Invalid statusText for match", 9, c.getHomeTeamStats().getCorners());
+		assertEquals("Invalid statusText for match", 3, c.getHomeTeamStats().getOffsides());
+		assertEquals("Invalid statusText for match", 18, c.getHomeTeamStats().getShotsTotal());
+		assertEquals("Invalid statusText for match", 0, c.getHomeTeamStats().getShotsOnTarget());
+		assertEquals("Invalid statusText for match", 6, c.getHomeTeamStats().getShotsOffTarget());
+		assertEquals("Invalid statusText for match", 0, c.getHomeTeamStats().getShotsBlocked());
+		assertEquals("Invalid statusText for match", 1, c.getHomeTeamStats().getYellowCards());
+		assertEquals("Invalid statusText for match", 0, c.getHomeTeamStats().getYellowRedCards());
+		assertEquals("Invalid statusText for match", 0, c.getHomeTeamStats().getRedCards());
+		assertEquals("Invalid statusText for match", 5, c.getHomeTeamStats().getSubstitutions());
+		assertEquals("Invalid statusText for match", 1, c.getHomeTeamStats().getGoalKicks());
+		assertEquals("Invalid statusText for match", 18, c.getHomeTeamStats().getGoalAttempts());
+		assertEquals("Invalid statusText for match", 14, c.getHomeTeamStats().getFreeKicks());
+		assertEquals("Invalid statusText for match", 23, c.getHomeTeamStats().getThrowIns());
+		assertEquals("Invalid statusText for match", 34, c.getHomeTeamStats().getBallSafes());
+		assertEquals("Invalid statusText for match", 8, c.getHomeTeamStats().getGoals());
+		assertEquals("Invalid statusText for match", 1, c.getHomeTeamStats().getPenalties());
+		assertEquals("Invalid statusText for match", 19, c.getHomeTeamStats().getAttacks());
+		assertEquals("Invalid statusText for match", 47, c.getHomeTeamStats().getDangerousAttacks());
+	}
 }

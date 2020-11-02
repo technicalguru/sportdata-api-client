@@ -278,7 +278,12 @@ public class Match {
 	 */
 	@JsonProperty("match_statistics")
 	public void setMatchStatistics(TeamStats stats[]) {
-		
+		if (stats != null) {
+			for (TeamStats stat : stats) {
+				if ((homeTeam  != null) && (homeTeam.getId()  == stat.getTeamId())) homeTeamStats  = stat;
+				if ((guestTeam != null) && (guestTeam.getId() == stat.getTeamId())) guestTeamStats = stat;
+			}
+		}
 	}
 	
 	/**
