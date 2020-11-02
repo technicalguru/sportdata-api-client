@@ -32,7 +32,7 @@ The project is in Alpha phase. APIs are still subject to change.
 
 ## API Reference
 
-Javadoc API for latest stable version is not yet available via a website. Working on it
+API Javadoc for all versions is available via [javadoc.io](https://www.javadoc.io/doc/eu.ralph-schuster/sportdata-api-client).
 
 ## License
 
