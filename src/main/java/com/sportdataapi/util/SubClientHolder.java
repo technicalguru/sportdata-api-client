@@ -21,6 +21,7 @@ public class SubClientHolder {
 	
 	/**
 	 * Constructor.
+	 * @param target - the target this object serves the subclients for
 	 */
 	public SubClientHolder(WebTarget target) {
 		this.target = target;

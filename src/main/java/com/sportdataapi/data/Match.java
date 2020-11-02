@@ -274,7 +274,7 @@ public class Match {
 
 	/**
 	 * Sets the matchStatistics.
-	 * @param events the events to set
+	 * @param stats - the match statistics to set
 	 */
 	@JsonProperty("match_statistics")
 	public void setMatchStatistics(TeamStats stats[]) {
