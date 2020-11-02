@@ -53,11 +53,11 @@ public class PlayersClientTest {
 		PlayersClient client = ClientProvider.getClient().soccer().players();
 		List<Player> players = client.list(48, 19, 35);
 		assertFalse("Players list is empty", players.size() == 0);
-//		for (Player c : players) {
-//			assertTrue("minAge violated for player: "+c.toString(), c.getAge() >= 19);
-//			assertTrue("maxAge violated for player: "+c.toString(), c.getAge() <= 35);
-//			assertEquals("Invalid country for player", 48, c.getCountry().getId());
-//		}
+		for (Player c : players) {
+			assertTrue("minAge violated for player: "+c.toString(), c.getAge() >= 19);
+			assertTrue("maxAge violated for player: "+c.toString(), c.getAge() <= 35);
+			assertEquals("Invalid country for player", 48, c.getCountry().getId());
+		}
 	}
 
 
@@ -69,10 +69,10 @@ public class PlayersClientTest {
 		PlayersClient client = ClientProvider.getClient().soccer().players();
 		List<Player> players = client.listMinAge(48, 19);
 		assertFalse("Players list is empty", players.size() == 0);
-//		for (Player c : players) {
-//			assertTrue("minAge violated for player: "+c.toString(), c.getAge() >= 19);
-//			assertEquals("Invalid country for player", 48, c.getCountry().getId());
-//		}
+		for (Player c : players) {
+			assertTrue("minAge violated for player: "+c.toString(), c.getAge() >= 19);
+			assertEquals("Invalid country for player", 48, c.getCountry().getId());
+		}
 	}
 
 	/**
@@ -83,10 +83,10 @@ public class PlayersClientTest {
 		PlayersClient client = ClientProvider.getClient().soccer().players();
 		List<Player> players = client.listMaxAge(48, 35);
 		assertFalse("Players list is empty", players.size() == 0);
-//		for (Player c : players) {
-//			assertTrue("maxAge violated for player: "+c.toString(), c.getAge() <= 35);
-//			assertEquals("Invalid country for player", 48, c.getCountry().getId());
-//		}
+		for (Player c : players) {
+			assertTrue("maxAge violated for player: "+c.toString(), c.getAge() <= 35);
+			assertEquals("Invalid country for player", 48, c.getCountry().getId());
+		}
 	}
 
 	/**

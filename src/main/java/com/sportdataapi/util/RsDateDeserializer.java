@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 import java.time.temporal.TemporalAccessor;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -39,6 +40,7 @@ public class RsDateDeserializer extends JsonDeserializer<RsDate> {
 		if (value.length() == 19) {
 			RsDay day     = RsDay.getDay(value.substring(0, 4)+value.substring(5, 7)+value.substring(8, 10));
 			RsDate rc     = day.getBegin();
+			rc.setTimeZone(TimeZone.getTimeZone("UTC"));
 			rc.add(Calendar.HOUR_OF_DAY, Integer.valueOf(value.substring(11,13)));
 			rc.add(Calendar.MINUTE,      Integer.valueOf(value.substring(14,16)));
 			return rc;

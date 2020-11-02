@@ -26,7 +26,7 @@ The project is in Alpha phase. APIs are still subject to change.
 <dependency>
 	<groupId>eu.ralph-schuster</groupId>
 	<artifactId>sportdata-api-client</artifactId>
-	<version>0.2</version>
+	<version>0.3</version>
 </dependency>
 ```
 

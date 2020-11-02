@@ -23,6 +23,7 @@ public class Match {
 	private int leagueId;
 	private int seasonId;
 	private int roundId;
+	private Round round;
 	private MatchResults results;
 	private Team homeTeam;
 	private Team guestTeam;
@@ -181,6 +182,22 @@ public class Match {
 	@JsonProperty("round_id")
 	public void setRoundId(int roundId) {
 		this.roundId = roundId;
+	}
+
+	/**
+	 * Returns the round.
+	 * @return the round
+	 */
+	public Round getRound() {
+		return round;
+	}
+
+	/**
+	 * Sets the round.
+	 * @param round the round to set
+	 */
+	public void setRound(Round round) {
+		this.round = round;
 	}
 
 	/**

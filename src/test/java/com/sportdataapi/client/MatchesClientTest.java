@@ -10,8 +10,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
-import javax.ws.rs.ForbiddenException;
-
 import org.junit.Test;
 
 import com.sportdataapi.ClientProvider;
@@ -55,11 +53,11 @@ public class MatchesClientTest {
 		matches = client.list(1245);
 		assertEquals("Matches list for UEFA CL 19/20 is incorrect", 214, matches.size());
 		matches = client.list(1243); System.out.println("Current size for season 1243 => "+matches.size());
-//		assertEquals("Matches list for UEFA CL 20/21 is incorrect", 149, teams.size());
+		//		assertEquals("Matches list for UEFA CL 20/21 is incorrect", 149, teams.size());
 		matches = client.list(435);
 		assertEquals("Matches list for UEFA EL 19/20 is incorrect", 523, matches.size());
 		matches = client.list(434); System.out.println("Current size for season 434 => "+matches.size());
-//		assertEquals("Matches list for UEFA EL 20/21 is incorrect", 306, teams.size());
+		//		assertEquals("Matches list for UEFA EL 20/21 is incorrect", 306, teams.size());
 
 	}
 
@@ -69,15 +67,11 @@ public class MatchesClientTest {
 	@Test
 	public void testListLive() {
 		MatchesClient client = ClientProvider.getClient().soccer().matches();
-		try {
-			List<Match> matches = client.listLive();
-			// No assumptions can be made
-			assertNotNull("Live matches request failed", matches);
-		} catch (ForbiddenException e) {
-			// We ignore temporarily as the list shall be empty not forbidden.
-		}
+		List<Match> matches = client.listLive();
+		// No assumptions can be made
+		assertNotNull("Live matches request failed", matches);
 	}
-	
+
 	/**
 	 * Tests the get() method.
 	 */
