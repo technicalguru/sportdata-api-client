@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.ws.rs.NotFoundException;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 
@@ -69,8 +70,12 @@ public class LeaguesClient extends AbstractClient {
 	 * @return the league requested or {@code null}
 	 */
 	public League get(int id) {
-		Response<League> response = getTarget().path(""+id).request().get(new GenericType<Response<League>>() {});
-		return response.getData();
+		try {
+			Response<League> response = getTarget().path(""+id).request().get(new GenericType<Response<League>>() {});
+			return response.getData();
+		} catch (NotFoundException e) {
+			return null;
+		}
 	}
 
 }

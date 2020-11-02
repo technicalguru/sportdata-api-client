@@ -15,11 +15,11 @@ import com.sportdataapi.util.ClientFilter;
  * @author ralph
  *
  */
-public class SportDataClient extends AbstractClient {
+public class SdaClient extends AbstractClient {
 
 	public static String NAME    = "sportdata-api-client";
-	public static String VERSION = "0.1";
-	public static String URL     = "https://github.com/technicalguru/sportdata-api";
+	public static String VERSION = "0.2";
+	public static String URL     = "https://github.com/technicalguru/sportdata-api-client";
 	
 			
 	private Client          client;
@@ -30,7 +30,7 @@ public class SportDataClient extends AbstractClient {
 	 * @param restClient - The Jersey HTTP client to be used
 	 * @param apiKey     - The sportdataapi.com API key
 	 */
-	protected SportDataClient(Client restClient, String apiKey) {
+	protected SdaClient(Client restClient, String apiKey) {
 		super(restClient.target("https://app.sportdataapi.com/api/v1"));
 		client      = restClient;
 		filter      = new ClientFilter(apiKey);

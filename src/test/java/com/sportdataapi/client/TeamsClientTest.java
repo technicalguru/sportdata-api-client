@@ -6,6 +6,7 @@ package com.sportdataapi.client;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -57,4 +58,24 @@ public class TeamsClientTest {
 		assertEquals("Invalid shortCode for Bayern Munich", "FCB", c.getShortCode());
 		assertEquals("Invalid country for Bayern Munich", 48, c.getCountry().getId());
 	}	
+	
+	/**
+	 * Tests the get() method.
+	 */
+	@Test
+	public void testGetNotFound() {
+		TeamsClient client = ClientProvider.getClient().soccer().teams();
+		Team c = client.get(0);
+		assertNull("No team expected", c);
+	}
+	
+	/**
+	 * Tests the list() method.
+	 */
+	@Test
+	public void testListNotFound() {
+		TeamsClient client = ClientProvider.getClient().soccer().teams();
+		List<Team> teams = client.list(3000);
+		assertEquals("List shall be empty", 0, teams.size());
+	}
 }

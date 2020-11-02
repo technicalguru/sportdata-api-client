@@ -11,7 +11,7 @@ import rs.baselib.io.FileFinder;
  */
 public class ClientProvider extends RunListener {
 
-	private static SportDataClient client;
+	private static SdaClient client;
 
 	/**
 	 * {@inheritDoc}
@@ -28,10 +28,10 @@ public class ClientProvider extends RunListener {
 		}
 		// Load from environment
 		if (apiKey == null) {
-			apiKey = System.getenv("SPA_API_TOKEN");
+			apiKey = System.getenv("SDA_API_TOKEN");
 		}
 		if (apiKey != null) {
-			client = SportDataClientFactory.newClient(apiKey, true);
+			client = SdaClientFactory.newClient(apiKey, true);
 		} else {
 			throw new Exception("No API key available. Use file \"my-apikey.txt\" or environment var \"SPA_API_TOKEN\"");
 		}
@@ -52,7 +52,7 @@ public class ClientProvider extends RunListener {
 	 * Returns the client.
 	 * @return the client
 	 */
-	public static SportDataClient getClient() {
+	public static SdaClient getClient() {
 		return client;
 	}
 

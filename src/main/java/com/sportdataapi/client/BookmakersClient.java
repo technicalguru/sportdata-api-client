@@ -5,6 +5,7 @@ package com.sportdataapi.client;
 
 import java.util.List;
 
+import javax.ws.rs.NotFoundException;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 
@@ -43,8 +44,12 @@ public class BookmakersClient extends AbstractClient {
 	 * @return the bookmaker requested or {@code null}
 	 */
 	public Bookmaker get(int id) {
-		Response<Bookmaker> response = getTarget().path(""+id).request().get(new GenericType<Response<Bookmaker>>() {});
-		return response.getData();
+		try {
+			Response<Bookmaker> response = getTarget().path(""+id).request().get(new GenericType<Response<Bookmaker>>() {});
+			return response.getData();
+		} catch (NotFoundException e) {
+			return null;
+		}
 	}
 
 }

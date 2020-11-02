@@ -5,6 +5,7 @@ package com.sportdataapi.client;
 
 import java.util.List;
 
+import javax.ws.rs.NotFoundException;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 
@@ -45,8 +46,12 @@ public class RoundsClient extends AbstractClient {
 	 * @return the round requested or {@code null}
 	 */
 	public Round get(int id) {
-		Response<Round> response = getTarget().path(""+id).request().get(new GenericType<Response<Round>>() {});
-		return response.getData();
+		try {
+			Response<Round> response = getTarget().path(""+id).request().get(new GenericType<Response<Round>>() {});
+			return response.getData();
+		} catch (NotFoundException e) {
+			return null;
+		}
 	}
 
 }
