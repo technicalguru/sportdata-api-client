@@ -72,7 +72,7 @@
 
 	<ciManagement>
 		<system>bamboo</system>
-		<url>https://bamboo.ralph-schuster.eu:8443/browse/SDAPI</url>
+		<url>https://bamboo.ralph-schuster.eu:8443/browse/SDACJ</url>
 	</ciManagement>
 
 	<developers>
