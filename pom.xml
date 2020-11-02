@@ -20,9 +20,8 @@
 	<artifactId>sportdata-api-client</artifactId>
 	<version>0.3-SNAPSHOT</version>
 
-	<name>sportdata-api</name>
+	<name>sportdata-api-client</name>
 	<description>A simple sportdataapi.com client.</description>
-	<!-- FIXME change it to the project's website -->
 	<url>https://github.com/technicalguru/sportdata-api-client</url>
 
 	<dependencies>
