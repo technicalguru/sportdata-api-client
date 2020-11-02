@@ -55,35 +55,35 @@ Summary:
 First, create your client instance via the `SdaClientFactory` using your API key:
 
 ```
-	String    myApiKey = '00000000-0000-0000-0000-000000000000';
-	SdaClient client   = SdaClientFactory.newClient(myApiKey);
+String    myApiKey = '00000000-0000-0000-0000-000000000000';
+SdaClient client   = SdaClientFactory.newClient(myApiKey);
 ```
 
 Next is to retrieve the subclient for the API you wish to use and make your request, e.g.:
 
 ```
-	LeaguesClient leaguesClient = client.soccer().leagues();
-	List<League>  germanLeagues = leaguesClient.list(48);
+LeaguesClient leaguesClient = client.soccer().leagues();
+List<League>  germanLeagues = leaguesClient.list(48);
 ```
 
 Now, you could try to find the current season of each league:
 
 ```
-	SeasonsClient seasonsClient = client.soccer.seasons();
-	for (League league : germanLeagues) {
-		List<Season> seasons = seasonsClient.list(league.getId());
-		for (Season season : seasons) {
-			if (season.isCurrent()) {
-				...
-			}
+SeasonsClient seasonsClient = client.soccer.seasons();
+for (League league : germanLeagues) {
+	List<Season> seasons = seasonsClient.list(league.getId());
+	for (Season season : seasons) {
+		if (season.isCurrent()) {
+			...
 		}
 	}
+}
 ```
 
 Once you are finished, you will need to close the client accordingly:
 
 ```
-	client.close();
+client.close();
 ```
 
 PS: It is a good pattern to always wrap the `get()` and `list()` calls in `try {} catch () {}` blocks
