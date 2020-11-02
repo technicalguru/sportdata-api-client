@@ -20,9 +20,9 @@ public class Match {
 	private String statusText;
 	private RsDate start;
 	private Integer minute;
-	private int league;
-	private int season;
-	private int round;
+	private int leagueId;
+	private int seasonId;
+	private int roundId;
 	private MatchResults results;
 	private Team homeTeam;
 	private Team guestTeam;
@@ -130,57 +130,57 @@ public class Match {
 	}
 
 	/**
-	 * Returns the league.
-	 * @return the league
+	 * Returns the leagueId.
+	 * @return the leagueId
 	 */
 	@JsonProperty("league_id")
-	public int getLeague() {
-		return league;
+	public int getLeagueId() {
+		return leagueId;
 	}
 
 	/**
-	 * Sets the league.
-	 * @param league the league to set
+	 * Sets the leagueId.
+	 * @param leagueId the leagueId to set
 	 */
 	@JsonProperty("league_id")
-	public void setLeague(int league) {
-		this.league = league;
+	public void setLeagueId(int leagueId) {
+		this.leagueId = leagueId;
 	}
 
 	/**
-	 * Returns the season.
-	 * @return the season
+	 * Returns the seasonId.
+	 * @return the seasonId
 	 */
 	@JsonProperty("season_id")
-	public int getSeason() {
-		return season;
+	public int getSeasonId() {
+		return seasonId;
 	}
 
 	/**
-	 * Sets the season.
-	 * @param season the season to set
+	 * Sets the seasonId.
+	 * @param seasonId the seasonId to set
 	 */
 	@JsonProperty("season_id")
-	public void setSeason(int season) {
-		this.season = season;
+	public void setSeasonId(int seasonId) {
+		this.seasonId = seasonId;
 	}
 
 	/**
-	 * Returns the round.
-	 * @return the round
+	 * Returns the roundId.
+	 * @return the roundId
 	 */
 	@JsonProperty("round_id")
-	public int getRound() {
-		return round;
+	public int getRoundId() {
+		return roundId;
 	}
 
 	/**
-	 * Sets the round.
-	 * @param round the round to set
+	 * Sets the roundId.
+	 * @param roundId the roundId to set
 	 */
 	@JsonProperty("round_id")
-	public void setRound(int round) {
-		this.round = round;
+	public void setRoundId(int roundId) {
+		this.roundId = roundId;
 	}
 
 	/**
@@ -331,7 +331,7 @@ public class Match {
 	@Override
 	public String toString() {
 		return "Match [id=" + id + ", status=" + status + ", statusText=" + statusText + ", start=" + start
-				+ ", minute=" + minute + ", league=" + league + ", season=" + season + ", round=" + round + ", results="
+				+ ", minute=" + minute + ", leagueId=" + leagueId + ", seasonId=" + seasonId + ", roundId=" + roundId + ", results="
 				+ results + ", homeTeam=" + homeTeam + ", guestTeam=" + guestTeam + ", events=" + events
 				+ ", homeTeamStats=" + homeTeamStats + ", guestTeamStats=" + guestTeamStats + ", homeTeamLineup="
 				+ homeTeamLineup + ", guestTeamLineup=" + guestTeamLineup + ", venue=" + venue + "]";

@@ -5,12 +5,12 @@ package com.sportdataapi.client;
 
 import javax.ws.rs.client.WebTarget;
 
-import com.sportdataapi.SportDataClient;
+import com.sportdataapi.SdaClient;
 import com.sportdataapi.util.AbstractClient;
 
 /**
  * The main client for soccer events.
- * <p><b>Attention!</b> You shall never create this client directly but use {@link SportDataClient#soccer()} instead.</p>
+ * <p><b>Attention!</b> You shall never create this client directly but use {@link SdaClient#soccer()} instead.</p>
  * @author ralph
  *
  */

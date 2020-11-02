@@ -6,6 +6,7 @@ package com.sportdataapi.client;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+import javax.ws.rs.NotFoundException;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 
@@ -104,7 +105,11 @@ public class MatchesClient extends AbstractClient {
 	 * @return the match or {@code null}
 	 */
 	public Match get(int id) {
-		Response<Match> response = getTarget().path(""+id).request().get(new GenericType<Response<Match>>() {});
-		return response.getData();
+		try {
+			Response<Match> response = getTarget().path(""+id).request().get(new GenericType<Response<Match>>() {});
+			return response.getData();
+		} catch (NotFoundException e) {
+			return null;
+		}
 	}
 }

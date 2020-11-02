@@ -3,6 +3,7 @@
  */
 package com.sportdataapi.client;
 
+import javax.ws.rs.NotFoundException;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 
@@ -33,7 +34,11 @@ public class OddsClient extends AbstractClient {
 	 */
 	public Odds getPrematch(int matchId) {
 		Response<Odds> response = getTarget().path(""+matchId).queryParam("type", "prematch").request().get(new GenericType<Response<Odds>>() {});
-		return response.getData();
+		try {
+			return response.getData();
+		} catch (NotFoundException e) {
+			return null;
+		}
 	}
 
 	/**
@@ -42,7 +47,11 @@ public class OddsClient extends AbstractClient {
 	 * @return list of inplay odds
 	 */
 	public Odds getInplay(int matchId) {
-		Response<Odds> response = getTarget().path(""+matchId).queryParam("type", "inplay").request().get(new GenericType<Response<Odds>>() {});
-		return response.getData();
+		try {
+			Response<Odds> response = getTarget().path(""+matchId).queryParam("type", "inplay").request().get(new GenericType<Response<Odds>>() {});
+			return response.getData();
+		} catch (NotFoundException e) {
+			return null;
+		}
 	}
 }

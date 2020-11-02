@@ -16,7 +16,7 @@ import org.glassfish.jersey.logging.LoggingFeature;
  * @author ralph
  *
  */
-public class SportDataClientFactory {
+public class SdaClientFactory {
 
 
 	/**
@@ -24,7 +24,7 @@ public class SportDataClientFactory {
 	 * @param apiKey  - the API key
 	 * @return the client
 	 */
-	public static SportDataClient newClient(String apiKey) {
+	public static SdaClient newClient(String apiKey) {
 		return newClient(apiKey, false);
 	}
 	
@@ -34,7 +34,7 @@ public class SportDataClientFactory {
 	 * @param isDebug - whether the requests shall be debugged
 	 * @return the client
 	 */
-	public static SportDataClient newClient(String apiKey, boolean isDebug) {
+	public static SdaClient newClient(String apiKey, boolean isDebug) {
 		ClientConfig config = new ClientConfig();
 		if (isDebug) {
 			config.property(LoggingFeature.LOGGING_FEATURE_VERBOSITY_CLIENT, LoggingFeature.Verbosity.PAYLOAD_TEXT);
@@ -49,9 +49,9 @@ public class SportDataClientFactory {
 	 * @param config  - Jersey client config
 	 * @return the client
 	 */
-	public static SportDataClient newClient(String apiKey, ClientConfig config) {
+	public static SdaClient newClient(String apiKey, ClientConfig config) {
 		Client client = ClientBuilder.newClient(config);
-		return new SportDataClient(client, apiKey);
+		return new SdaClient(client, apiKey);
 	}
 
 }

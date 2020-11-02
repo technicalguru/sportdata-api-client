@@ -16,8 +16,8 @@ public class Season {
     private int id;
     private String name;
     private boolean current;
-    private int country;
-    private int league;
+    private int countryId;
+    private int leagueId;
     private RsDay start;
     private RsDay end;
     
@@ -80,39 +80,39 @@ public class Season {
 	}
 
 	/**
-	 * Returns the country.
-	 * @return the country
+	 * Returns the countryId.
+	 * @return the countryId
 	 */
 	@JsonProperty("country_id")
-	public int getCountry() {
-		return country;
+	public int getCountryId() {
+		return countryId;
 	}
 
 	/**
-	 * Sets the country.
-	 * @param country - the country to set
+	 * Sets the countryId.
+	 * @param countryId - the countryId to set
 	 */
 	@JsonProperty("country_id")
-	public void setCountry(int country) {
-		this.country = country;
+	public void setCountryId(int countryId) {
+		this.countryId = countryId;
 	}
 
 	/**
-	 * Returns the league.
-	 * @return the league
+	 * Returns the leagueId.
+	 * @return the leagueId
 	 */
 	@JsonProperty("league_id")
-	public int getLeague() {
-		return league;
+	public int getLeagueId() {
+		return leagueId;
 	}
 
 	/**
-	 * Sets the league.
-	 * @param league - the league to set
+	 * Sets the leagueId.
+	 * @param leagueId - the leagueId to set
 	 */
 	@JsonProperty("league_id")
-	public void setLeague(int league) {
-		this.league = league;
+	public void setLeagueId(int leagueId) {
+		this.leagueId = leagueId;
 	}
 
 	/**
@@ -160,7 +160,7 @@ public class Season {
 	 */
 	@Override
 	public String toString() {
-		return "Season [id=" + id + ", name=" + name + ", current=" + current + ", country=" + country + ", league=" + league + ", start=" + start + ", end=" + end + "]";
+		return "Season [id=" + id + ", name=" + name + ", current=" + current + ", countryId=" + countryId + ", leagueId=" + leagueId + ", start=" + start + ", end=" + end + "]";
 	}
 
 	

@@ -9,7 +9,7 @@
 	</parent>
 
 	<properties>
-		<project.home>https://github.com/technicalguru/sportdata-api</project.home>
+		<project.home>https://github.com/technicalguru/sportdata-api-client</project.home>
 		<maven.bundle.version>3.5.1</maven.bundle.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>11</maven.compiler.source>
@@ -18,12 +18,12 @@
 
 	<groupId>eu.ralph-schuster</groupId>
 	<artifactId>sportdata-api-client</artifactId>
-	<version>0.1</version>
+	<version>0.2</version>
 
 	<name>sportdata-api</name>
-	<description>A simple sportdata-api.</description>
+	<description>A simple sportdataapi.com client.</description>
 	<!-- FIXME change it to the project's website -->
-	<url>https://github.com/technicalguru/sportdata-api</url>
+	<url>https://github.com/technicalguru/sportdata-api-client</url>
 
 	<dependencies>
 		<dependency>
@@ -59,20 +59,20 @@
 	</dependencies>
 
 	<scm>
-		<connection>scm:git:https://github.com/technicalguru/sportdata-api.git</connection>
-		<developerConnection>scm:git:https://github.com/technicalguru/sportdata-api.git</developerConnection>
-		<url>https://github.com/technicalguru/sportdata-api</url>
-	  <tag>sportdata-api-client-0.1</tag>
+		<connection>scm:git:https://github.com/technicalguru/sportdata-api-client.git</connection>
+		<developerConnection>scm:git:https://github.com/technicalguru/sportdata-api-client.git</developerConnection>
+		<url>https://github.com/technicalguru/sportdata-api-client</url>
+	  <tag>sportdata-api-client-0.2</tag>
   </scm>
 
 	<issueManagement>
 		<system>Github</system>
-		<url>https://github.com/technicalguru/sportdata-api</url>
+		<url>https://github.com/technicalguru/sportdata-api-client</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>bamboo</system>
-		<url>https://bamboo.ralph-schuster.eu:8443/browse/SDAPI</url>
+		<url>https://bamboo.ralph-schuster.eu:8443/browse/SDACJ</url>
 	</ciManagement>
 
 	<developers>

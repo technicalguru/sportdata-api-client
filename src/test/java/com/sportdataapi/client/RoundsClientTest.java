@@ -35,8 +35,8 @@ public class RoundsClientTest {
 				// Test Round 2
 				found = true;
 				assertEquals("Invalid name German Bundesliga 19/20 Round 2", "2", c.getName());
-				assertEquals("Invalid seasonId German Bundesliga 19/20 Round 2", 503, c.getSeason());
-				assertEquals("Invalid leagueId German Bundesliga 19/20 Round 2", 314, c.getLeague());
+				assertEquals("Invalid seasonId German Bundesliga 19/20 Round 2", 503, c.getSeasonId());
+				assertEquals("Invalid leagueId German Bundesliga 19/20 Round 2", 314, c.getLeagueId());
 				assertEquals("Invalid leagueName German Bundesliga 19/20 Round 2", "Bundesliga", c.getLeagueName());
 			}
 		}
@@ -53,8 +53,8 @@ public class RoundsClientTest {
 		assertNotNull("Round not found", c);
 		// Test Round 2
 		assertEquals("Invalid name German Bundesliga 19/20 Round 2", "2", c.getName());
-		assertEquals("Invalid seasonId German Bundesliga 19/20 Round 2", 503, c.getSeason());
-		assertEquals("Invalid leagueId German Bundesliga 19/20 Round 2", 314, c.getLeague());
+		assertEquals("Invalid seasonId German Bundesliga 19/20 Round 2", 503, c.getSeasonId());
+		assertEquals("Invalid leagueId German Bundesliga 19/20 Round 2", 314, c.getLeagueId());
 		assertEquals("Invalid leagueName German Bundesliga 19/20 Round 2", "Bundesliga", c.getLeagueName());
 	}	
 }

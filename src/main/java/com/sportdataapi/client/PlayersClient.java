@@ -5,6 +5,7 @@ package com.sportdataapi.client;
 
 import java.util.List;
 
+import javax.ws.rs.NotFoundException;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 
@@ -78,8 +79,12 @@ public class PlayersClient extends AbstractClient {
 	 * @return the player or {@code null}
 	 */
 	public Player get(int id) {
-		Response<Player> response = getTarget().path(""+id).request().get(new GenericType<Response<Player>>() {});
-		return response.getData();
+		try {
+			Response<Player> response = getTarget().path(""+id).request().get(new GenericType<Response<Player>>() {});
+			return response.getData();
+		} catch (NotFoundException e) {
+			return null;
+		}
 	}
 
 }

@@ -3,6 +3,7 @@
  */
 package com.sportdataapi.client;
 
+import javax.ws.rs.NotFoundException;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 
@@ -31,7 +32,11 @@ public class StandingsClient extends AbstractClient {
 	 * @return list of standings
 	 */
 	public LeagueStandings get(int seasonId) {
-		Response<LeagueStandings> response = getTarget().queryParam("season_id", seasonId).request().get(new GenericType<Response<LeagueStandings>>() {});
-		return response.getData();
+		try {
+			Response<LeagueStandings> response = getTarget().queryParam("season_id", seasonId).request().get(new GenericType<Response<LeagueStandings>>() {});
+			return response.getData();
+		} catch (NotFoundException e) {
+			return null;
+		}
 	}
 }

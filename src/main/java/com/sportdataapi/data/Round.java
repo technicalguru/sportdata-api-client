@@ -10,8 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Round {
 
 	private int id;
-	private int league;
-	private int season;
+	private int leagueId;
+	private int seasonId;
 	private String name;
 	private boolean current;
 	private String leagueName;
@@ -41,39 +41,39 @@ public class Round {
 	}
 
 	/**
-	 * Returns the league.
-	 * @return the league
+	 * Returns the leagueId.
+	 * @return the leagueId
 	 */
 	@JsonProperty("league_id")
-	public int getLeague() {
-		return league;
+	public int getLeagueId() {
+		return leagueId;
 	}
 
 	/**
-	 * Sets the league.
-	 * @param league the league to set
+	 * Sets the leagueId.
+	 * @param leagueId the leagueId to set
 	 */
 	@JsonProperty("league_id")
-	public void setLeague(int league) {
-		this.league = league;
+	public void setLeagueId(int leagueId) {
+		this.leagueId = leagueId;
 	}
 
 	/**
-	 * Returns the season.
-	 * @return the season
+	 * Returns the seasonId.
+	 * @return the seasonId
 	 */
 	@JsonProperty("season_id")
-	public int getSeason() {
-		return season;
+	public int getSeasonId() {
+		return seasonId;
 	}
 
 	/**
-	 * Sets the season.
-	 * @param season the season to set
+	 * Sets the seasonId.
+	 * @param seasonId the seasonId to set
 	 */
 	@JsonProperty("season_id")
-	public void setSeason(int season) {
-		this.season = season;
+	public void setSeasonId(int seasonId) {
+		this.seasonId = seasonId;
 	}
 
 	/**
@@ -133,7 +133,7 @@ public class Round {
 	 */
 	@Override
 	public String toString() {
-		return "Round [id=" + id + ", league=" + league + ", season=" + season + ", name=" + name + ", current=" + current + ", leagueName=" + leagueName + "]";
+		return "Round [id=" + id + ", leagueId=" + leagueId + ", seasonId=" + seasonId + ", name=" + name + ", current=" + current + ", leagueName=" + leagueName + "]";
 	}
 
 	

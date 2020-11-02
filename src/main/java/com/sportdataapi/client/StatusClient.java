@@ -5,13 +5,13 @@ package com.sportdataapi.client;
 
 import javax.ws.rs.client.WebTarget;
 
-import com.sportdataapi.SportDataClient;
+import com.sportdataapi.SdaClient;
 import com.sportdataapi.data.Status;
 import com.sportdataapi.util.AbstractClient;
 
 /**
  * The Status client.
- * <p><b>Attention!</b> You shall never create this client directly but use {@link SportDataClient#status()} instead.</p>
+ * <p><b>Attention!</b> You shall never create this client directly but use {@link SdaClient#status()} instead.</p>
  * @author ralph
  *
  */
