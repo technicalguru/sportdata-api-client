@@ -23,6 +23,7 @@ public class Match {
 	private int leagueId;
 	private int seasonId;
 	private int roundId;
+	private Round round;
 	private MatchResults results;
 	private Team homeTeam;
 	private Team guestTeam;
@@ -184,6 +185,22 @@ public class Match {
 	}
 
 	/**
+	 * Returns the round.
+	 * @return the round
+	 */
+	public Round getRound() {
+		return round;
+	}
+
+	/**
+	 * Sets the round.
+	 * @param round the round to set
+	 */
+	public void setRound(Round round) {
+		this.round = round;
+	}
+
+	/**
 	 * Returns the results.
 	 * @return the results
 	 */
@@ -257,11 +274,16 @@ public class Match {
 
 	/**
 	 * Sets the matchStatistics.
-	 * @param events the events to set
+	 * @param stats - the match statistics to set
 	 */
 	@JsonProperty("match_statistics")
 	public void setMatchStatistics(TeamStats stats[]) {
-		
+		if (stats != null) {
+			for (TeamStats stat : stats) {
+				if ((homeTeam  != null) && (homeTeam.getId()  == stat.getTeamId())) homeTeamStats  = stat;
+				if ((guestTeam != null) && (guestTeam.getId() == stat.getTeamId())) guestTeamStats = stat;
+			}
+		}
 	}
 	
 	/**

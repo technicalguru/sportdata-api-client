@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>eu.ralph-schuster</groupId>
 		<artifactId>pom-oss</artifactId>
-		<version>2.0.1</version>
+		<version>2.0.2</version>
 	</parent>
 
 	<properties>
@@ -18,11 +18,10 @@
 
 	<groupId>eu.ralph-schuster</groupId>
 	<artifactId>sportdata-api-client</artifactId>
-	<version>0.2</version>
+	<version>0.3</version>
 
-	<name>sportdata-api</name>
+	<name>sportdata-api-client</name>
 	<description>A simple sportdataapi.com client.</description>
-	<!-- FIXME change it to the project's website -->
 	<url>https://github.com/technicalguru/sportdata-api-client</url>
 
 	<dependencies>
@@ -47,11 +46,6 @@
 			<version>2.32</version>
 		</dependency>
 		<dependency>
-			<groupId>org.ehcache</groupId>
-			<artifactId>ehcache</artifactId>
-			<version>3.9.0</version>
-		</dependency>
-		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.13</version>
@@ -62,7 +56,7 @@
 		<connection>scm:git:https://github.com/technicalguru/sportdata-api-client.git</connection>
 		<developerConnection>scm:git:https://github.com/technicalguru/sportdata-api-client.git</developerConnection>
 		<url>https://github.com/technicalguru/sportdata-api-client</url>
-	  <tag>sportdata-api-client-0.2</tag>
+	  <tag>sportdata-api-client-0.3</tag>
   </scm>
 
 	<issueManagement>
@@ -94,20 +88,6 @@
 							<value>com.sportdataapi.ClientProvider</value>
 						</property>
 					</properties>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<configuration>
-					<skipDeploy>true</skipDeploy>
-				</configuration>	
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<skipAssembly>true</skipAssembly>
 				</configuration>
 			</plugin>
 		</plugins>

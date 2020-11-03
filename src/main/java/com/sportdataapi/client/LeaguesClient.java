@@ -54,7 +54,7 @@ public class LeaguesClient extends AbstractClient {
 
 	/**
 	 * Request and return the list of leagues in a country.
-	 * @param id             - list leagues of this country only
+	 * @param countryId - list leagues of this country only
 	 * @return list of leagues
 	 */
 	public List<League> list(int countryId) {

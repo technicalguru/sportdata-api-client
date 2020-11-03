@@ -36,6 +36,7 @@ public class MatchesClient extends AbstractClient {
 
 	/**
 	 * Request and return the list of matches in a season.
+	 * @param seasonId - limit matches to the given season only
 	 * @return list of matches
 	 */
 	public List<Match> list(int seasonId) {
@@ -44,6 +45,8 @@ public class MatchesClient extends AbstractClient {
 	
 	/**
 	 * Request and return the list of matches in a season.
+	 * @param seasonId - limit matches to the given season only
+	 * @param status   - limit matches to the given match status only
 	 * @return list of matches
 	 */
 	public List<Match> list(int seasonId, MatchStatus status) {
@@ -52,6 +55,9 @@ public class MatchesClient extends AbstractClient {
 	
 	/**
 	 * Request and return the list of matches in a season.
+	 * @param seasonId - limit matches to the given season only
+	 * @param from     - list match from this day on only
+	 * @param to       - list match until this day on only
 	 * @return list of matches
 	 */
 	public List<Match> list(int seasonId, RsDay from, RsDay to) {
@@ -60,6 +66,10 @@ public class MatchesClient extends AbstractClient {
 	
 	/**
 	 * Request and return the list of matches in a season.
+	 * @param seasonId - limit matches to the given season only
+	 * @param status   - limit matches to the given match status only
+	 * @param from     - list match from this day on only
+	 * @param to       - list match until this day on only
 	 * @return list of matches
 	 */
 	public List<Match> list(int seasonId, MatchStatus status, RsDay from, RsDay to) {
@@ -81,6 +91,7 @@ public class MatchesClient extends AbstractClient {
 	
 	/**
 	 * Request and return the list of live matches .
+	 * @param seasonId - limit matches to the given season only
 	 * @return list of matches
 	 */
 	public List<Match> listLive(int seasonId) {
@@ -89,6 +100,8 @@ public class MatchesClient extends AbstractClient {
 	
 	/**
 	 * Request and return the list of live matches.
+	 * @param seasonId - limit matches to the given season only
+	 * @param status   - limit matches to the given match status only
 	 * @return list of matches
 	 */
 	public List<Match> listLive(int seasonId, MatchStatus status) {

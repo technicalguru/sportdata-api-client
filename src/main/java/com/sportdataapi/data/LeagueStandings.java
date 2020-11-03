@@ -101,7 +101,7 @@ public class LeagueStandings {
 
 	/**
 	 * Sets the teamStandings.
-	 * @param teamStandings the teamStandings to set
+	 * @param standings - the standings to set
 	 */
 	@SuppressWarnings("unchecked")
 	@JsonProperty("standings")

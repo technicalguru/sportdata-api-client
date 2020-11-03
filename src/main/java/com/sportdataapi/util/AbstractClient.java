@@ -18,7 +18,6 @@ public abstract class AbstractClient {
 	/**
 	 * Constructor.
 	 * @param target - the target to request.
-	 * @param apiKey . the API key
 	 */
 	protected AbstractClient(WebTarget target) {
 		subclients = new SubClientHolder(target);
@@ -26,7 +25,6 @@ public abstract class AbstractClient {
 
 	/**
 	 * Returns a request builder.
-	 * @param path the path for the request.
 	 * @return the builder
 	 */
 	public Builder getRequest() {

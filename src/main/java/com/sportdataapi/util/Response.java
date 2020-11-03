@@ -18,6 +18,8 @@ public class Response<T> {
 
 	/**
 	 * Constructor.
+	 * @param query - the query object for the response
+	 * @param data  - the data object for the response
 	 */
 	public Response(ResponseQuery query, T data) {
 		setQuery(query);
@@ -42,6 +44,7 @@ public class Response<T> {
 
 	/**
 	 * Returns whether the response has errors.
+	 * @return {@code true} when the response returned errors. 
 	 */
 	public boolean hasErrors() {
 		if (query == null) return true;
