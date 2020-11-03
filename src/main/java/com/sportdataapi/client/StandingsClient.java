@@ -21,7 +21,7 @@ public class StandingsClient extends AbstractClient {
 
 	/**
 	 * Constructor.
-	 * @param target - the target to request
+	 * @param target the target to request
 	 */
 	public StandingsClient(WebTarget target) {
 		super(target.path("standings"));
@@ -29,6 +29,7 @@ public class StandingsClient extends AbstractClient {
 
 	/**
 	 * Request and return the list of standings.
+	 * @param seasonId ID of season to return standings for 
 	 * @return list of standings
 	 */
 	public LeagueStandings get(int seasonId) {
