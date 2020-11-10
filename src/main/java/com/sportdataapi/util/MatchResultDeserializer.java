@@ -37,7 +37,10 @@ public class MatchResultDeserializer extends JsonDeserializer<MatchResult> {
 				results = s.split("-", 2);
 			}
 			if (results.length == 2) {
-				return new MatchResult(Integer.valueOf(results[0]), Integer.valueOf(results[1]));
+				if ((results[0].length() > 0) && (results[1].length() > 0)) {
+					return new MatchResult(Integer.valueOf(results[0]), Integer.valueOf(results[1]));
+				}
+				return null;
 			}
 			throw new RuntimeException("Cannot parse result: "+node.asText());
 		}
