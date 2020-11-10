@@ -18,7 +18,7 @@
 
 	<groupId>eu.ralph-schuster</groupId>
 	<artifactId>sportdata-api-client</artifactId>
-	<version>0.4-SNAPSHOT</version>
+	<version>0.9-SNAPSHOT</version>
 
 	<name>sportdata-api-client</name>
 	<description>A simple sportdataapi.com client.</description>
