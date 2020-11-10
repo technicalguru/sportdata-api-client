@@ -1,5 +1,13 @@
 # Change Log
 
+## v1.0
+
+
+
+## v0.9
+
+* Documentation
+
 ## v0.3
 
 * Removed dependency to ehcache (not needed)
