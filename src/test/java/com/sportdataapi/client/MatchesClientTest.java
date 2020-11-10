@@ -38,6 +38,8 @@ public class MatchesClientTest {
 				found = true;
 				assertEquals("Invalid league for match", 314, c.getLeagueId());
 				assertEquals("Invalid season for match", 503, c.getSeasonId());
+				assertEquals("Invalid round for match", 6402, c.getRoundId());
+				assertEquals("Invalid roundName for match", "19", c.getRound().getName());
 				assertEquals("Invalid status for match", MatchStatus.ENDED, c.getStatus());
 				assertEquals("Invalid statusText for match", "finished", c.getStatusText());
 				assertTrue("Invalid start for match: "+c.getStart().toString(), c.getStart().toString().indexOf("2020-01-25T17:30:00") > 0);
@@ -83,6 +85,8 @@ public class MatchesClientTest {
 		// Test match
 		assertEquals("Invalid league for match", 314, c.getLeagueId());
 		assertEquals("Invalid season for match", 503, c.getSeasonId());
+		assertEquals("Invalid round for match", 6402, c.getRoundId());
+		assertEquals("Invalid roundName for match", "19", c.getRound().getName());
 		assertEquals("Invalid status for match", MatchStatus.ENDED, c.getStatus());
 		assertEquals("Invalid statusText for match", "finished", c.getStatusText());
 		assertTrue("Invalid start for match: "+c.getStart().toString(), c.getStart().toString().indexOf("2020-01-25T17:30:00") > 0);

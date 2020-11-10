@@ -198,6 +198,7 @@ public class Match {
 	 */
 	public void setRound(Round round) {
 		this.round = round;
+		if (round != null) setRoundId(round.getId());
 	}
 
 	/**

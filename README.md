@@ -9,9 +9,8 @@ URL, HTTP headers and query parameter syntax.
 **Attention!** A valid subscription is required to use this client. Anonymous clients will not work.
 
 ## Status and Roadmap
-The project is in Alpha phase. APIs are still subject to change.
+The project is in Beta phase. APIs are unlikely to change but it can still happen.
 
-* Beta version is expected to be available by November 15th, 2020.
 * Release 1.0 is expected to be available by December 1st, 2020.
 
 ## Features
@@ -26,7 +25,7 @@ The project is in Alpha phase. APIs are still subject to change.
 <dependency>
 	<groupId>eu.ralph-schuster</groupId>
 	<artifactId>sportdata-api-client</artifactId>
-	<version>0.3</version>
+	<version>0.9</version>
 </dependency>
 ```
 
