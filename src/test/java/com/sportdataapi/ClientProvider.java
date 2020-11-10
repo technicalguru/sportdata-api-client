@@ -33,7 +33,7 @@ public class ClientProvider extends RunListener {
 		if (apiKey != null) {
 			client = SdaClientFactory.newClient(apiKey, true);
 		} else {
-			throw new Exception("No API key available. Use file \"my-apikey.txt\" or environment var \"SPA_API_TOKEN\"");
+			throw new Exception("No API key available. Use file \"my-apikey.txt\" or environment var \"SDA_API_TOKEN\"");
 		}
 	}
 
