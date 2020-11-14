@@ -2,8 +2,8 @@
 
 ## v1.0
 
-
-
+* Bug #4 - Fix match result parsing for canceled matches
+* Bug #5 - Fix referee_id in matches
 ## v0.9
 
 * Documentation

@@ -27,6 +27,7 @@ public class Match {
 	private MatchResults results;
 	private Team homeTeam;
 	private Team guestTeam;
+	private int refereeId;
 	private List<MatchEvent> events;
 	private TeamStats homeTeamStats;
 	private TeamStats guestTeamStats;
@@ -253,6 +254,24 @@ public class Match {
 	@JsonProperty("away_team")
 	public void setGuestTeam(Team guestTeam) {
 		this.guestTeam = guestTeam;
+	}
+
+	/**
+	 * Returns the Referee ID.
+	 * @return the refereeId
+	 */
+	@JsonProperty("referee_id")
+	public int getRefereeId() {
+		return refereeId;
+	}
+
+	/**
+	 * Sets the Referee ID.
+	 * @param refereeId the refereeId to set
+	 */
+	@JsonProperty("referee_id")
+	public void setRefereeId(int refereeId) {
+		this.refereeId = refereeId;
 	}
 
 	/**
