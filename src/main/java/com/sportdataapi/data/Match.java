@@ -2,6 +2,7 @@ package com.sportdataapi.data;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.sportdataapi.util.RsDateDeserializer;
@@ -13,6 +14,7 @@ import rs.baselib.util.RsDate;
  * @author ralph
  *
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Match {
 
 	private int id;

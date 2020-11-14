@@ -1,5 +1,6 @@
 package com.sportdataapi.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.sportdataapi.util.RsDayDeserializer;
@@ -11,6 +12,7 @@ import rs.baselib.util.RsDay;
  * @author ralph
  *
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Season {
 
     private int id;

@@ -4,6 +4,7 @@
 package com.sportdataapi.data;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -11,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author ralph
  *
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class MatchResults {
 
 	private MatchResult scores;

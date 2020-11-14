@@ -3,11 +3,14 @@
  */
 package com.sportdataapi.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * Odds data information.
  * @author ralph
  *
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class OddsData {
 
 	private String home;
