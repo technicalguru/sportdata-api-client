@@ -11,7 +11,7 @@ URL, HTTP headers and query parameter syntax.
 ## Status and Roadmap
 The project is in Beta phase. APIs are unlikely to change but it can still happen.
 
-* Release 1.0 is expected to be available by December 1st, 2020.
+* Release 1.0 is expected to be available in December 2020.
 
 ## Features
 * Implementation of all soccer REST endpoints
@@ -25,7 +25,7 @@ The project is in Beta phase. APIs are unlikely to change but it can still happe
 <dependency>
 	<groupId>eu.ralph-schuster</groupId>
 	<artifactId>sportdata-api-client</artifactId>
-	<version>0.9</version>
+	<version>0.9.1</version>
 </dependency>
 ```
 

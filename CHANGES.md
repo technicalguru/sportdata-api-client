@@ -1,9 +1,12 @@
 # Change Log
 
-## v1.0
+## v0.9.1
 
 * Bug #4 - Fix match result parsing for canceled matches
 * Bug #5 - Fix referee_id in matches
+* Ignoring unknown JSON attributes in API responses
+* Issue #6 - New match status TO_BE_ANNOUNCED
+
 ## v0.9
 
 * Documentation
