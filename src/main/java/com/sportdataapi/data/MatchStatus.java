@@ -20,6 +20,7 @@ public enum MatchStatus {
 	PENALTIES       (13, SimpleMatchStatus.INPLAY, "The event is in penalties because extra time didn't determinate a winner."),
 	BREAK_TIME      (14, SimpleMatchStatus.INPLAY, "Event is in break waiting for extra time or penalties."),
 	AWARDING        (15, SimpleMatchStatus.INPLAY, "Awarding of a victory to a contestant because there are no other contestants."),
+	TO_BE_ANNOUNCED (17, SimpleMatchStatus.NOT_STARTED, "The event has been planned preliminary."),
 	UPDATE          (2,  SimpleMatchStatus.INPLAY, "Event will be updated later."),
 	ENDED           (3,  SimpleMatchStatus.FINISHED, "Event has ended after 90 minutes."),
 	AFTER_PENALTIES (31, SimpleMatchStatus.FINISHED, "Event has ended after penalty shootout."),
