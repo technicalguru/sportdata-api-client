@@ -139,4 +139,13 @@ public class MatchesClientTest {
 		assertEquals("Invalid statusText for match", 19, c.getHomeTeamStats().getAttacks());
 		assertEquals("Invalid statusText for match", 47, c.getHomeTeamStats().getDangerousAttacks());
 	}
+	
+	/**
+	 * Tests that a match score "-" is interpreted correctly.
+	 */
+	public void testNoMatchResult() {
+		MatchesClient client = ClientProvider.getClient().soccer().matches();
+		Match c = client.get(131734);
+		assertNull(c.getResults().getHalfTime());
+	}
 }

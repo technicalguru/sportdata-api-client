@@ -5,6 +5,7 @@ package com.sportdataapi.data;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -12,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author ralph
  *
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TeamLineup {
 
 	private int teamId;

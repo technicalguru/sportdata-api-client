@@ -1,4 +1,4 @@
-# Contributing to Mailserver Project
+# Contributing to sportdata-api-client Project
 
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
@@ -16,8 +16,6 @@ The following is a set of guidelines for contributing to *sportdata-api-client*.
   * [Git Commit Messages](#git-commit-messages)
   * [Documentation Styleguide](#documentation-styleguide)
 
-[Additional Notes](#additional-notes)
-
 ## I don't want to read this whole thing I just have a question
 
 > Please file an issue labelled **`help wanted`** to ask a question. There is no message board at this point.
@@ -34,7 +32,7 @@ Before creating bug reports, please check [this list](#before-submitting-a-bug-r
 
 #### Before Submitting A Bug Report
 
-* **Perform a [cursory search](https://github.com/search?q=+is%3Aissue+user%3Atechnicalguru)** to see if the problem has already been reported. If it has **and the issue is still open**, add a comment to the existing issue instead of opening a new one.
+* **Perform a [cursory search](https://github.com/search?q=is%3Aissue++repo%3Atechnicalguru%2Fsportdata-api-client)** to see if the problem has already been reported. If it has **and the issue is still open**, add a comment to the existing issue instead of opening a new one.
 
 #### How Do I Submit A (Good) Bug Report?
 
@@ -74,7 +72,7 @@ Before creating enhancement suggestions, please check [this list](#before-submit
 
 #### Before Submitting An Enhancement Suggestion
 
-* **Perform a [cursory search](https://github.com/search?q=+is%3Aissue+user%3Atechnicalguru)** to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
+* **Perform a [cursory search](https://github.com/search?q=is%3Aissue++repo%3Atechnicalguru%2Fsportdata-api-client)** to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
 
 #### How Do I Submit A (Good) Enhancement Suggestion?
 
@@ -117,8 +115,3 @@ Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com
 ### Documentation Styleguide
 
 Use the [Markdown](https://daringfireball.net/projects/markdown) syntax for documentation files.
-
-## Additional Notes
-
-[beginner]:https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Abeginner+label%3Ahelp-wanted+user%3Atechnicalguru+sort%3Acomments-desc
-[help-wanted]:https://github.com/search?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted+user%3Atechnicalguru+sort%3Acomments-desc+-label%3Abeginner

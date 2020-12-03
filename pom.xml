@@ -18,7 +18,7 @@
 
 	<groupId>eu.ralph-schuster</groupId>
 	<artifactId>sportdata-api-client</artifactId>
-	<version>0.9</version>
+	<version>0.9.1</version>
 
 	<name>sportdata-api-client</name>
 	<description>A simple sportdataapi.com client.</description>
@@ -45,18 +45,13 @@
 			<artifactId>jersey-hk2</artifactId>
 			<version>2.32</version>
 		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.13.1</version>
-		</dependency>
 	</dependencies>
 
 	<scm>
 		<connection>scm:git:https://github.com/technicalguru/sportdata-api-client.git</connection>
 		<developerConnection>scm:git:https://github.com/technicalguru/sportdata-api-client.git</developerConnection>
 		<url>https://github.com/technicalguru/sportdata-api-client</url>
-	  <tag>sportdata-api-client-0.9</tag>
+	  <tag>sportdata-api-client-0.9.1</tag>
   </scm>
 
 	<issueManagement>

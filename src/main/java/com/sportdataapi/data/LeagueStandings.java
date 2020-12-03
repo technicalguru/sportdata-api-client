@@ -6,6 +6,7 @@ package com.sportdataapi.data;
 import java.util.List;
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.sportdataapi.util.StandingsDeserializer;
@@ -15,6 +16,7 @@ import com.sportdataapi.util.StandingsDeserializer;
  * @author ralph
  *
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class LeagueStandings {
 
 	private int leagueId;
