@@ -29,9 +29,14 @@ public class RsDayDeserializer extends JsonDeserializer<RsDay> {
 	@Override
 	public RsDay deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
 		JsonNode node     = p.readValueAsTree();
-		String value      = node.asText();
-		return RsDay.getDay(value.substring(0, 4)+value.substring(5, 7)+value.substring(8, 10));
+		if (!node.isNull()) {
+			String value      = node.asText();
+			if (value.length() >= 10) {
+				return RsDay.getDay(value.substring(0, 4)+value.substring(5, 7)+value.substring(8, 10));
+			}
+		}
+		return null;
 	}
 
-	
+
 }
