@@ -81,6 +81,14 @@ public class SoccerClient extends AbstractClient {
 	}
 	
 	/**
+	 * Returns the access client for referees.
+	 * @return the client to request referee information
+	 */
+	public RefereesClient referees() {
+		return get(RefereesClient.class);
+	}
+	
+	/**
 	 * Returns the access client for rounds.
 	 * @return the client to request round information
 	 */
