@@ -1,5 +1,14 @@
 # Change Log
 
+## v0.9.3
+
+* 
+
+## v0.9.2
+
+* Bug #8 - Fix NULL values for RsDayDeserializer and RsDateDeserializer
+* Issue #7 - New endpoint /soccer/referees
+
 ## v0.9.1
 
 * Bug #4 - Fix match result parsing for canceled matches
