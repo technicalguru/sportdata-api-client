@@ -2,7 +2,7 @@
 
 ## v0.9.3
 
-* 
+* Issue #9 - Add group and stage information
 
 ## v0.9.2
 
