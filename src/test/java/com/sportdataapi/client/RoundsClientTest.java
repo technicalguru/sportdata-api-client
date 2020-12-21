@@ -28,7 +28,7 @@ public class RoundsClientTest {
 	public void testList() {
 		RoundsClient client = ClientProvider.getClient().soccer().rounds();
 		List<Round> rounds = client.list(503);
-		assertTrue("Invalid number of rounds", rounds.size() == 34);
+		assertEquals("Invalid number of rounds", 35, rounds.size());
 		boolean found = false;
 		for (Round c : rounds) {
 			if (c.getId() == 6211) {
