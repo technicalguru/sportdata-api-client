@@ -26,6 +26,8 @@ public class Match {
 	private int seasonId;
 	private int roundId;
 	private Round round;
+	private Stage stage;
+	private Group group;
 	private MatchResults results;
 	private Team homeTeam;
 	private Team guestTeam;
@@ -202,6 +204,38 @@ public class Match {
 	public void setRound(Round round) {
 		this.round = round;
 		if (round != null) setRoundId(round.getId());
+	}
+	
+	/**
+	 * Returns the stage object.
+	 * @return the stage
+	 */
+	public Stage getStage() {
+		return stage;
+	}
+
+	/**
+	 * Sets the stage object.
+	 * @param stage the stage to set
+	 */
+	public void setStage(Stage stage) {
+		this.stage = stage;
+	}
+
+	/**
+	 * Returns the group object.
+	 * @return the group
+	 */
+	public Group getGroup() {
+		return group;
+	}
+
+	/**
+	 * Sets the group object.
+	 * @param group the group to set
+	 */
+	public void setGroup(Group group) {
+		this.group = group;
 	}
 
 	/**
