@@ -97,6 +97,14 @@ public class SoccerClient extends AbstractClient {
 	}
 	
 	/**
+	 * Returns the access client for stages.
+	 * @return the client to request stage information
+	 */
+	public StagesClient stages() {
+		return get(StagesClient.class);
+	}
+	
+	/**
 	 * Returns the access client for seasons.
 	 * @return the client to request season information
 	 */

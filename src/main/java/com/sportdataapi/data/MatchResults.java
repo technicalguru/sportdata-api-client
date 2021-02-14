@@ -143,6 +143,7 @@ public class MatchResults {
 	 */
 	@JsonIgnore
 	public MatchResult getLast() {
+		if (getScores()    != null) return getScores();
 		if (getPenalties() != null) return getPenalties();
 		if (getExtraTime() != null) return getExtraTime();
 		if (getEndTime() != null)   return getEndTime();
