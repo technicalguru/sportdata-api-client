@@ -81,8 +81,11 @@ public class MatchesClientTest {
 	public void testGet() {
 		MatchesClient client = ClientProvider.getClient().soccer().matches();
 		Match c = client.get(178014);
+		//Match c = client.get(185218);
+		
 		assertNotNull("Match not found", c);
 		// Test match
+		//assertEquals("Invalid result for match", "MatchResult [homeScore=5, guestScore=0]", c.getResults().getLast().toString());
 		assertEquals("Invalid league for match", 314, c.getLeagueId());
 		assertEquals("Invalid season for match", 503, c.getSeasonId());
 		assertEquals("Invalid round for match", 6402, c.getRoundId());
@@ -154,7 +157,7 @@ public class MatchesClientTest {
 		assertEquals("Invalid name for stage", "Group stage", c.getStage().getName());
 		// Test group
 		assertNotNull("Group not set", c.getGroup());
-		assertEquals("Invalid id for group", 29, c.getGroup().getId());
+		assertEquals("Invalid id for group", 2079, c.getGroup().getId());
 		assertEquals("Invalid name for group", "Allsvenskan Norra", c.getGroup().getName());
 		
 	}
