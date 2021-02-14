@@ -158,7 +158,7 @@ public class MatchesClientTest {
 		// Test group
 		assertNotNull("Group not set", c.getGroup());
 		assertEquals("Invalid id for group", 2079, c.getGroup().getId());
-		assertEquals("Invalid name for group", "Allsvenskan Norra", c.getGroup().getName());
+		assertEquals("Invalid name for group", "K", c.getGroup().getName());
 		
 	}
 	
