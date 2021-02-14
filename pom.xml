@@ -18,7 +18,7 @@
 
 	<groupId>eu.ralph-schuster</groupId>
 	<artifactId>sportdata-api-client</artifactId>
-	<version>0.9.4-Beta</version>
+	<version>0.9.5-Beta-SNAPSHOT</version>
 
 	<name>sportdata-api-client</name>
 	<description>A simple sportdataapi.com client.</description>
@@ -51,7 +51,7 @@
 		<connection>scm:git:https://github.com/technicalguru/sportdata-api-client.git</connection>
 		<developerConnection>scm:git:https://github.com/technicalguru/sportdata-api-client.git</developerConnection>
 		<url>https://github.com/technicalguru/sportdata-api-client</url>
-	  <tag>sportdata-api-client-0.9.4-Beta</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 	<issueManagement>
