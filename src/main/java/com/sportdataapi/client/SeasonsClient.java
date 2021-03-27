@@ -3,6 +3,7 @@
  */
 package com.sportdataapi.client;
 
+import java.net.URI;
 import java.util.List;
 
 import javax.ws.rs.NotFoundException;
@@ -29,6 +30,10 @@ public class SeasonsClient extends AbstractClient {
 		super(target.path("seasons"));
 	}
 
+	public URI getUri(int leagueId) {
+		return getTarget().queryParam("league_id", ""+leagueId).getUri();
+	}
+	
 	/**
 	 * Request and return the list of seasons for a specific league.
 	 * @param leagueId - the ID of the league to query
