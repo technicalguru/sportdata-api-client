@@ -3,8 +3,11 @@
  */
 package com.sportdataapi;
 
+import java.net.URI;
+
 import javax.ws.rs.client.Client;
 
+import com.sportdataapi.client.RequestListener;
 import com.sportdataapi.client.SoccerClient;
 import com.sportdataapi.client.StatusClient;
 import com.sportdataapi.util.AbstractClient;
@@ -15,7 +18,7 @@ import com.sportdataapi.util.ClientFilter;
  * @author ralph
  *
  */
-public class SdaClient extends AbstractClient {
+public class SdaClient extends AbstractClient implements RequestListener {
 
 	public static String NAME    = "sportdata-api-client";
 	public static String VERSION = "0.9.6";
@@ -24,6 +27,7 @@ public class SdaClient extends AbstractClient {
 			
 	private Client          client;
 	private ClientFilter    filter;
+	private URI             lastGlobalUri;
 	
 	/**
 	 * Constructor.
@@ -32,8 +36,9 @@ public class SdaClient extends AbstractClient {
 	 */
 	protected SdaClient(Client restClient, String apiKey) {
 		super(restClient.target("https://app.sportdataapi.com/api/v1"));
-		client      = restClient;
-		filter      = new ClientFilter(apiKey);
+		client        = restClient;
+		filter        = new ClientFilter(apiKey);
+		lastGlobalUri = null;
 		getTarget().register(filter);
 	}
 
@@ -58,5 +63,21 @@ public class SdaClient extends AbstractClient {
 	 */
 	public void close() {
 		client.close();
+	}
+
+	/**
+	 * {@inheritDoc} 
+	 */
+	@Override
+	public void registerRequest(URI uri) {
+		lastGlobalUri = uri;
+	}
+
+	/**
+	 * Returns the last URI that was requested globally.
+	 * @return the URI requested last
+	 */
+	public URI getLastGlobalUri() {
+		return lastGlobalUri;
 	}
 }
