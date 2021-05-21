@@ -48,7 +48,7 @@ public class LeaguesClient extends AbstractClient {
 	public List<League> list(boolean subscribedOnly) {
 		WebTarget target = getTarget();
 		if (subscribedOnly)  target = target.queryParam("subscribed", subscribedOnly);
-		Response<List<League>> response = target.request().get(new GenericType<Response<List<League>>>() {});
+		Response<List<League>> response = registerRequest(target).request().get(new GenericType<Response<List<League>>>() {});
 		return response.getData();
 	}
 
@@ -60,7 +60,7 @@ public class LeaguesClient extends AbstractClient {
 	public List<League> list(int countryId) {
 		if (countryId <= 0) throw new RuntimeException("countryId must be a positive number");
 		WebTarget target = getTarget().queryParam("country_id", countryId);
-		Response<Map<String,League>> response = target.request().get(new GenericType<Response<Map<String,League>>>() {});
+		Response<Map<String,League>> response = registerRequest(target).request().get(new GenericType<Response<Map<String,League>>>() {});
 		return new ArrayList<>(response.getData().values());
 	}
 	
@@ -71,7 +71,7 @@ public class LeaguesClient extends AbstractClient {
 	 */
 	public League get(int id) {
 		try {
-			Response<League> response = getTarget().path(""+id).request().get(new GenericType<Response<League>>() {});
+			Response<League> response = registerRequest(getTarget().path(""+id)).request().get(new GenericType<Response<League>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;

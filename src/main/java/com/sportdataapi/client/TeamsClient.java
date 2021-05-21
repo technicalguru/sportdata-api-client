@@ -36,7 +36,7 @@ public class TeamsClient extends AbstractClient {
 	 */
 	public List<Team> list(int countryId) {
 		if (countryId <= 0) throw new RuntimeException("countryId must be a positive number");
-		Response<List<Team>> response = getTarget().queryParam("country_id", ""+countryId).request().get(new GenericType<Response<List<Team>>>() {});
+		Response<List<Team>> response = registerRequest(getTarget().queryParam("country_id", ""+countryId)).request().get(new GenericType<Response<List<Team>>>() {});
 		return response.getData();
 	}
 	
@@ -47,7 +47,7 @@ public class TeamsClient extends AbstractClient {
 	 */
 	public Team get(int id) {
 		try {
-			Response<Team> response = getTarget().path(""+id).request().get(new GenericType<Response<Team>>() {});
+			Response<Team> response = registerRequest(getTarget().path(""+id)).request().get(new GenericType<Response<Team>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;

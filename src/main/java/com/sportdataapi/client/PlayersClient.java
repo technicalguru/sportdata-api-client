@@ -69,7 +69,7 @@ public class PlayersClient extends AbstractClient {
 		WebTarget target = getTarget().queryParam("country_id", ""+countryId);
 		if (minAge > 0) target = target.queryParam("min_age", ""+minAge);
 		if (maxAge > 0) target = target.queryParam("max_age", ""+maxAge);
-		Response<List<Player>> response = target.request().get(new GenericType<Response<List<Player>>>() {});
+		Response<List<Player>> response = registerRequest(target).request().get(new GenericType<Response<List<Player>>>() {});
 		return response.getData();
 	}
 	
@@ -80,7 +80,7 @@ public class PlayersClient extends AbstractClient {
 	 */
 	public Player get(int id) {
 		try {
-			Response<Player> response = getTarget().path(""+id).request().get(new GenericType<Response<Player>>() {});
+			Response<Player> response = registerRequest(getTarget().path(""+id)).request().get(new GenericType<Response<Player>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;

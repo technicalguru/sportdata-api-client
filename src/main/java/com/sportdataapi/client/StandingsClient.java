@@ -34,7 +34,7 @@ public class StandingsClient extends AbstractClient {
 	 */
 	public LeagueStandings get(int seasonId) {
 		try {
-			Response<LeagueStandings> response = getTarget().queryParam("season_id", seasonId).request().get(new GenericType<Response<LeagueStandings>>() {});
+			Response<LeagueStandings> response = registerRequest(getTarget().queryParam("season_id", seasonId)).request().get(new GenericType<Response<LeagueStandings>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;

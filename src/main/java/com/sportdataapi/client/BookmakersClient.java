@@ -45,7 +45,7 @@ public class BookmakersClient extends AbstractClient {
 	 */
 	public Bookmaker get(int id) {
 		try {
-			Response<Bookmaker> response = getTarget().path(""+id).request().get(new GenericType<Response<Bookmaker>>() {});
+			Response<Bookmaker> response = registerRequest(getTarget().path(""+id)).request().get(new GenericType<Response<Bookmaker>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;

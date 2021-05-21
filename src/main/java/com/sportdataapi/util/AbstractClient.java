@@ -3,6 +3,8 @@
  */
 package com.sportdataapi.util;
 
+import java.net.URI;
+
 import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.client.WebTarget;
 
@@ -14,6 +16,7 @@ import javax.ws.rs.client.WebTarget;
 public abstract class AbstractClient {
 
 	private SubClientHolder subclients;
+	private URI lastURI;
 	
 	/**
 	 * Constructor.
@@ -21,17 +24,37 @@ public abstract class AbstractClient {
 	 */
 	protected AbstractClient(WebTarget target) {
 		subclients = new SubClientHolder(target);
+		lastURI    = null;
 	}
 
+	/**
+	 * Register the target that it is requested now.
+	 * <p>Descendants shall call this method in order to allow debug of URIs requested.</p>
+	 * @param target - the target to register
+	 * @return the target again (for method chaining)
+	 */
+	protected WebTarget registerRequest(WebTarget target) {
+		if (target != null) lastURI = target.getUri();
+		return target;
+	}
+	
 	/**
 	 * Returns a request builder.
 	 * @return the builder
 	 */
 	public Builder getRequest() {
-		Builder rc = getTarget().request();
+		Builder rc = registerRequest(getTarget()).request();
 		return rc;
 	}
 
+	/**
+	 * Returns the last registered URI that was requested (can be null)
+	 * @return the last URI that was requested
+	 */
+	public URI getLastUri() {
+		return lastURI;
+	}
+	
 	/**
 	 * Returns the target.
 	 * @return the target

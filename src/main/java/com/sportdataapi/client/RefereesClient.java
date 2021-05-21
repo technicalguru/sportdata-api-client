@@ -38,7 +38,7 @@ public class RefereesClient extends AbstractClient {
 	public List<Referee> list(int countryId) {
 		if (countryId <= 0) throw new RuntimeException("countryId must be a positive number");
 		WebTarget target = getTarget().queryParam("country_id", countryId);
-		Response<List<Referee>> response = target.request().get(new GenericType<Response<List<Referee>>>() {});
+		Response<List<Referee>> response = registerRequest(target).request().get(new GenericType<Response<List<Referee>>>() {});
 		return new ArrayList<>(response.getData());
 	}
 	
@@ -49,7 +49,7 @@ public class RefereesClient extends AbstractClient {
 	 */
 	public Referee get(int id) {
 		try {
-			Response<Referee> response = getTarget().path(""+id).request().get(new GenericType<Response<Referee>>() {});
+			Response<Referee> response = registerRequest(getTarget().path(""+id)).request().get(new GenericType<Response<Referee>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;
