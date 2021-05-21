@@ -36,7 +36,7 @@ public class RoundsClient extends AbstractClient {
 	 */
 	public List<Round> list(int seasonId) {
 		if (seasonId <= 0) throw new RuntimeException("seasonId must be a positive number");
-		Response<List<Round>> response = getTarget().queryParam("season_id", ""+seasonId).request().get(new GenericType<Response<List<Round>>>() {});
+		Response<List<Round>> response = registerRequest(getTarget().queryParam("season_id", ""+seasonId)).request().get(new GenericType<Response<List<Round>>>() {});
 		return response.getData();
 	}
 	
@@ -47,7 +47,7 @@ public class RoundsClient extends AbstractClient {
 	 */
 	public Round get(int id) {
 		try {
-			Response<Round> response = getTarget().path(""+id).request().get(new GenericType<Response<Round>>() {});
+			Response<Round> response = registerRequest(getTarget().path(""+id)).request().get(new GenericType<Response<Round>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;

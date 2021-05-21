@@ -36,7 +36,7 @@ public class StagesClient extends AbstractClient {
 	 */
 	public List<Stage> list(int seasonId) {
 		if (seasonId <= 0) throw new RuntimeException("seasonId must be a positive number");
-		Response<List<Stage>> response = getTarget().queryParam("season_id", ""+seasonId).request().get(new GenericType<Response<List<Stage>>>() {});
+		Response<List<Stage>> response = registerRequest(getTarget().queryParam("season_id", ""+seasonId)).request().get(new GenericType<Response<List<Stage>>>() {});
 		return response.getData();
 	}
 	
@@ -47,7 +47,7 @@ public class StagesClient extends AbstractClient {
 	 */
 	public Stage get(int id) {
 		try {
-			Response<Stage> response = getTarget().path(""+id).request().get(new GenericType<Response<Stage>>() {});
+			Response<Stage> response = registerRequest(getTarget().path(""+id)).request().get(new GenericType<Response<Stage>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;

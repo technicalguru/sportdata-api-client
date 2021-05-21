@@ -77,7 +77,7 @@ public class MatchesClient extends AbstractClient {
 		if (status != null) target = target.queryParam("status_id", status.getId());
 		if (from   != null) target = target.queryParam("date_from", DATE_FORMATTER.format(from.getTime()));
 		if (to     != null) target = target.queryParam("date_to",   DATE_FORMATTER.format(from.getTime()));
-		Response<List<Match>> response = target.request().get(new GenericType<Response<List<Match>>>() {});
+		Response<List<Match>> response = registerRequest(target).request().get(new GenericType<Response<List<Match>>>() {});
 		return response.getData();
 	}
 	
@@ -108,7 +108,7 @@ public class MatchesClient extends AbstractClient {
 		WebTarget target = getTarget().queryParam("live", "true");
 		if (seasonId  > 0)    target = target.queryParam("season_id", seasonId);
 		if (status   != null) target = target.queryParam("status_id", status.getId());
-		Response<List<Match>> response = target.request().get(new GenericType<Response<List<Match>>>() {});
+		Response<List<Match>> response = registerRequest(target).request().get(new GenericType<Response<List<Match>>>() {});
 		return response.getData();
 	}
 	
@@ -119,7 +119,7 @@ public class MatchesClient extends AbstractClient {
 	 */
 	public Match get(int id) {
 		try {
-			Response<Match> response = getTarget().path(""+id).request().get(new GenericType<Response<Match>>() {});
+			Response<Match> response = registerRequest(getTarget().path(""+id)).request().get(new GenericType<Response<Match>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;

@@ -45,7 +45,7 @@ public class CountriesClient extends AbstractClient {
 	 */
 	public Country get(int id) {
 		try {
-			Response<Country> response = getTarget().path(""+id).request().get(new GenericType<Response<Country>>() {});
+			Response<Country> response = registerRequest(getTarget().path(""+id)).request().get(new GenericType<Response<Country>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;

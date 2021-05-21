@@ -45,7 +45,7 @@ public class MarketsClient extends AbstractClient {
 	 */
 	public Market get(int id) {
 		try {
-			Response<Market> response = getTarget().path(""+id).request().get(new GenericType<Response<Market>>() {});
+			Response<Market> response = registerRequest(getTarget().path(""+id)).request().get(new GenericType<Response<Market>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;

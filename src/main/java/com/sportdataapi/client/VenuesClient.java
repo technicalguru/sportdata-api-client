@@ -36,7 +36,7 @@ public class VenuesClient extends AbstractClient {
 	 */
 	public List<Venue> list(int countryId) {
 		if (countryId <= 0) throw new RuntimeException("countryId must be a positive number");
-		Response<List<Venue>> response = getTarget().queryParam("country_id", ""+countryId).request().get(new GenericType<Response<List<Venue>>>() {});
+		Response<List<Venue>> response = registerRequest(getTarget().queryParam("country_id", ""+countryId)).request().get(new GenericType<Response<List<Venue>>>() {});
 		return response.getData();
 	}
 	
@@ -47,7 +47,7 @@ public class VenuesClient extends AbstractClient {
 	 */
 	public Venue get(int id) {
 		try {
-			Response<Venue> response = getTarget().path(""+id).request().get(new GenericType<Response<Venue>>() {});
+			Response<Venue> response = registerRequest(getTarget().path(""+id)).request().get(new GenericType<Response<Venue>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;

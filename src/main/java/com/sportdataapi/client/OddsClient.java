@@ -33,7 +33,7 @@ public class OddsClient extends AbstractClient {
 	 * @return list of prematch odds
 	 */
 	public Odds getPrematch(int matchId) {
-		Response<Odds> response = getTarget().path(""+matchId).queryParam("type", "prematch").request().get(new GenericType<Response<Odds>>() {});
+		Response<Odds> response = registerRequest(getTarget().path(""+matchId).queryParam("type", "prematch")).request().get(new GenericType<Response<Odds>>() {});
 		try {
 			return response.getData();
 		} catch (NotFoundException e) {
@@ -48,7 +48,7 @@ public class OddsClient extends AbstractClient {
 	 */
 	public Odds getInplay(int matchId) {
 		try {
-			Response<Odds> response = getTarget().path(""+matchId).queryParam("type", "inplay").request().get(new GenericType<Response<Odds>>() {});
+			Response<Odds> response = registerRequest(getTarget().path(""+matchId).queryParam("type", "inplay")).request().get(new GenericType<Response<Odds>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;

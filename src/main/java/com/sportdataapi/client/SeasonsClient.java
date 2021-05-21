@@ -3,7 +3,6 @@
  */
 package com.sportdataapi.client;
 
-import java.net.URI;
 import java.util.List;
 
 import javax.ws.rs.NotFoundException;
@@ -30,10 +29,6 @@ public class SeasonsClient extends AbstractClient {
 		super(target.path("seasons"));
 	}
 
-	public URI getUri(int leagueId) {
-		return getTarget().queryParam("league_id", ""+leagueId).getUri();
-	}
-	
 	/**
 	 * Request and return the list of seasons for a specific league.
 	 * @param leagueId - the ID of the league to query
@@ -41,7 +36,7 @@ public class SeasonsClient extends AbstractClient {
 	 */
 	public List<Season> list(int leagueId) {
 		if (leagueId <= 0) throw new RuntimeException("leagueId must be a positive number");
-		Response<List<Season>> response = getTarget().queryParam("league_id", ""+leagueId).request().get(new GenericType<Response<List<Season>>>() {});
+		Response<List<Season>> response = registerRequest(getTarget().queryParam("league_id", ""+leagueId)).request().get(new GenericType<Response<List<Season>>>() {});
 		return response.getData();
 	}
 	
@@ -52,7 +47,7 @@ public class SeasonsClient extends AbstractClient {
 	 */
 	public Season get(int id) {
 		try {
-			Response<Season> response = getTarget().path(""+id).request().get(new GenericType<Response<Season>>() {});
+			Response<Season> response = registerRequest(getTarget().path(""+id)).request().get(new GenericType<Response<Season>>() {});
 			return response.getData();
 		} catch (NotFoundException e) {
 			return null;

@@ -34,7 +34,7 @@ public class TopScorersClient extends AbstractClient {
 	 * @return list of top scorers
 	 */
 	public List<TopScorer> get(int seasonId) {
-		Response<List<TopScorer>> response = getTarget().queryParam("season_id", seasonId).request().get(new GenericType<Response<List<TopScorer>>>() {});
+		Response<List<TopScorer>> response = registerRequest(getTarget().queryParam("season_id", seasonId)).request().get(new GenericType<Response<List<TopScorer>>>() {});
 		return response.getData();
 	}
 }
