@@ -18,7 +18,7 @@ import com.sportdataapi.util.ClientFilter;
 public class SdaClient extends AbstractClient {
 
 	public static String NAME    = "sportdata-api-client";
-	public static String VERSION = "0.9.2";
+	public static String VERSION = "0.9.6";
 	public static String URL     = "https://github.com/technicalguru/sportdata-api-client";
 	
 			
