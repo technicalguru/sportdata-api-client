@@ -1,4 +1,4 @@
-# sportdata-api-client
+# sportdata-api-client (Project stopped)
 Java client for requesting data from [sportdataapi.com](https://sportdataapi.com).
 
 ## Synopsis
@@ -9,9 +9,7 @@ URL, HTTP headers and query parameter syntax.
 **Attention!** A valid subscription is required to use this client. Anonymous clients will not work.
 
 ## Status and Roadmap
-The project is in Beta phase. APIs are unlikely to change but it can still happen.
-
-* Release 1.0 is expected to be available in December 2020.
+The project is stuck in Beta phase and was aborted (due to missing production usage). Interested parties may takeover this project. Please contact me
 
 ## Features
 * Implementation of all soccer REST endpoints
